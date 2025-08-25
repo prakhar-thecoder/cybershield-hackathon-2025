@@ -1,0 +1,4 @@
+.env
+all_data
+__pycache__
+raw_response.json
