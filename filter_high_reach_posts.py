@@ -1,22 +1,29 @@
-import json
+import pandas as pd
 
-def filter_high_reach_posts(input_path, output_path, like_threshold=50):
+def filter_high_reach_posts(hashtag, like_threshold=50):
+    input_path = f"outputs/{hashtag}_all_posts.csv"
+    output_path = f"outputs/{hashtag}_high_reach_posts.csv"
+
     try:
-        with open(input_path, 'r', encoding='utf-8') as f:
-            posts = json.load(f)
+        # Read CSV file into a pandas DataFrame
+        df = pd.read_csv(input_path)
     except FileNotFoundError:
         print(f"Error: The file {input_path} was not found.")
         return
-    except json.JSONDecodeError:
-        print(f"Error: Could not decode JSON from {input_path}.")
+    except pd.errors.EmptyDataError:
+        print(f"Error: The file {input_path} is empty.")
+        return
+    except Exception as e:
+        print(f"Error reading CSV file: {str(e)}")
         return
 
-    high_reach_posts = [post for post in posts if post.get('like_count', 0) > like_threshold]
+    # Filter posts with high reach
+    high_reach_df = df[df['like_count'] > like_threshold]
 
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(high_reach_posts, f, indent=4)
+    # Save filtered data to CSV
+    high_reach_df.to_csv(output_path, index=False)
 
-    print(f"Filtered {len(high_reach_posts)}/{len(posts)} high-reach posts and saved them to {output_path}.")
+    print(f"Filtered {len(high_reach_df)}/{len(df)} high-reach posts and saved them to {output_path}.")
 
 if __name__ == '__main__':
-    filter_high_reach_posts('all_posts.json', 'high_reach_posts.json')
+    filter_high_reach_posts('kashmirbanegapakistan')

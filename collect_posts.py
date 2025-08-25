@@ -1,11 +1,14 @@
 import request_utils
 import pandas as pd
+import os
 
 def fetch_posts(hashtag, pages=1):
     all_posts = []
     next_id = ""
     df = pd.DataFrame(all_posts)
-    df.to_csv(f'all_data/{hashtag}_all_posts.csv', index=False)
+    if not os.path.exists('outputs'):
+        os.makedirs('outputs')
+    df.to_csv(f'outputs/{hashtag}_all_posts.csv', index=False)
     for page in range(1, pages + 1):
         print(f"Fetching page {page}/{pages} for #{hashtag}...")
         posts, next_id = request_utils.get_posts(hashtag=hashtag, next_id=next_id)
@@ -17,7 +20,7 @@ def fetch_posts(hashtag, pages=1):
             break
         all_posts.extend(posts)
         df = pd.DataFrame(all_posts)
-        df.to_csv(f'all_data/{hashtag}_all_posts.csv', index=False)
+        df.to_csv(f'outputs/{hashtag}_all_posts.csv', index=False)
         if not next_id:
             print("No more pages to fetch.")
             break
@@ -28,7 +31,7 @@ def fetch_posts(hashtag, pages=1):
 
     try:
         df = pd.DataFrame(all_posts)
-        df.to_csv(f'all_data/{hashtag}_all_posts.csv', index=False)
+        df.to_csv(f'outputs/{hashtag}_all_posts.csv', index=False)
         print(f"Saved {len(all_posts)} posts to all_posts.csv")
     except (IOError, TypeError) as e:
         print(f"Error saving posts to file: {e}")
@@ -37,4 +40,4 @@ def fetch_posts(hashtag, pages=1):
 
 
 if __name__ == "__main__":
-    fetch_posts("kashmirbanegapakistan", pages=50)
+    fetch_posts("kashmirbanegapakistan", pages=1)

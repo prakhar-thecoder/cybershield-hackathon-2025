@@ -41,7 +41,7 @@ def get_posts(hashtag, next_id=None):
         response = requests.get(base_url, headers=headers, params=params)
         response.raise_for_status()
         data = response.json()
-        with open('raw_response.json', 'w') as f:
+        with open('outputs/raw_response.json', 'w') as f:
             json.dump(data, f, indent=4)
         
         if not isinstance(data, dict):

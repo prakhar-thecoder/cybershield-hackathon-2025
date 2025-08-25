@@ -1,45 +1,64 @@
-import csv
+import pandas as pd
 import os
 
-posts = []
-data_dir = 'all_data'
-for filename in os.listdir(data_dir):
-    if filename.endswith('.csv'):
-        with open(os.path.join(data_dir, filename), 'r', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                posts.append(row)
+def get_usernames_by_posts(hashtag):
+    input_path = f"outputs/{hashtag}_anti_india_posts.csv"
+    output_path = f"outputs/{hashtag}_user_post_counts.csv"
+    
+    if not os.path.exists(input_path):
+        print(f"File not found: {input_path}")
+        return []
+    
+    # Read the CSV file
+    posts_df = pd.read_csv(input_path)
+    
+    # Count posts by username and sort in descending order
+    user_post_counts = posts_df['username'].value_counts()
+    
+    # Convert to DataFrame and save to CSV
+    user_post_counts_df = user_post_counts.reset_index()
+    user_post_counts_df.columns = ['username', 'post_count']
+    user_post_counts_df.to_csv(output_path, index=False)
+    
+    # Convert to list of tuples (username, count)
+    return [(username, count) for username, count in user_post_counts.items()]
 
-print(f"Loaded {len(posts)} posts from CSV files.")
-usernames = {}
-for post in posts:
-    username = post.get('username')
-    if username:
-        usernames[username] = usernames.get(username, 0) + 1
+def get_usernames_by_reach(hashtag):
+    input_path = f"outputs/{hashtag}_anti_india_posts.csv"
+    output_path = f"outputs/{hashtag}_user_reach.csv"
+    
+    if not os.path.exists(input_path):
+        print(f"File not found: {input_path}")
+        return []
+    
+    # Read the CSV file
+    posts_df = pd.read_csv(input_path)
+    
+    # Calculate total reach for each post (likes + comments)
+    posts_df['total_reach'] = posts_df['like_count'] + posts_df['comment_count']
+    
+    # Group by username and sum the total reach
+    user_reach = posts_df.groupby('username')['total_reach'].sum().sort_values(ascending=False)
+    
+    # Convert to DataFrame and save to CSV
+    user_reach_df = user_reach.reset_index()
+    user_reach_df.columns = ['username', 'total_reach']
+    user_reach_df.to_csv(output_path, index=False)
+    
+    # Convert to list of tuples (username, total_reach)
+    return [(username, int(reach)) for username, reach in user_reach.items()]
 
-print(f"Found {len(usernames)} unique users.")
-print("\nTop 5 users by number of posts:")
-sorted_usernames = sorted(usernames.items(), key=lambda x: x[1], reverse=True)
-for username, count in sorted_usernames[:5]:
-    print(f"{username}: {count} posts")
-
-print("\nHigh Reach Analysis")
-high_reach_users = {}
-for post in posts:
-    username = post.get('username')
-    if username:
-        try:
-            like_count = int(post.get('like_count', 0))
-        except (ValueError, TypeError):
-            like_count = 0
-        try:
-            comment_count = int(post.get('comment_count', 0))
-        except (ValueError, TypeError):
-            comment_count = 0
-        reach_score = like_count + comment_count
-        high_reach_users[username] = high_reach_users.get(username, 0) + reach_score
-
-print("Top 5 users by reach score:")
-sorted_high_reach_users = sorted(high_reach_users.items(), key=lambda x: x[1], reverse=True)
-for username, score in sorted_high_reach_users[:5]:
-    print(f"{username}: {score} reach score")
+if __name__ == "__main__":
+    hashtag = "kashmirbanegapakistan"  # Example hashtag
+    
+    # Get and print top users by post count
+    print("\nTop users by post count:")
+    top_posters = get_usernames_by_posts(hashtag)
+    for username, count in top_posters[:10]:  # Show top 10
+        print(f"{username}: {count} posts")
+    
+    # Get and print top users by reach
+    print("\nTop users by total reach:")
+    top_reach = get_usernames_by_reach(hashtag)
+    for username, reach in top_reach[:10]:  # Show top 10
+        print(f"{username}: {reach} total reach")
