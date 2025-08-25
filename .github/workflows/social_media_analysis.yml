@@ -39,8 +39,9 @@ jobs:
     - name: Run analysis
       env:
         GEMINI_KEYS: ${{ secrets.GEMINI_KEYS }}
+        PYTHONUNBUFFERED: "1"  # This ensures Python output is unbuffered
       run: |
-        python main_workflow.py \
+        python -u main_workflow.py \
           --hashtag "${{ github.event.inputs.hashtag }}" \
           --posts "${{ github.event.inputs.posts }}" \
           --likes-threshold "${{ github.event.inputs.likes_threshold }}"
