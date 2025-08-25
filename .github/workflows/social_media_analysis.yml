@@ -46,7 +46,8 @@ jobs:
           --likes-threshold "${{ github.event.inputs.likes_threshold }}"
           
     - name: Upload analysis results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: analysis-results
         path: outputs/
+        compression-level: 6 # Optional: Optimized compression for better performance
