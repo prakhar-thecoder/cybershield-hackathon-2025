@@ -1,0 +1,6 @@
+pandas
+requests
+python-dotenv
+langchain
+langchain-google-genai
+pydantic

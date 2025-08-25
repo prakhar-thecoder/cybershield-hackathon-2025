@@ -1,0 +1,52 @@
+name: Social Media Analysis
+
+on:
+  workflow_dispatch:
+    inputs:
+      hashtag:
+        description: 'Hashtag to analyze'
+        required: false
+        default: 'kashmirbanegapakistan'
+        type: string
+      posts:
+        description: 'Number of posts to fetch'
+        required: false
+        default: '100'
+        type: string
+      likes_threshold:
+        description: 'Minimum likes threshold for high-reach posts'
+        required: false
+        default: '50'
+        type: string
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Run analysis
+      env:
+        GEMINI_KEYS: ${{ secrets.GEMINI_KEYS }}
+      run: |
+        python main_workflow.py \
+          --hashtag "${{ github.event.inputs.hashtag }}" \
+          --posts "${{ github.event.inputs.posts }}" \
+          --likes-threshold "${{ github.event.inputs.likes_threshold }}"
+          
+    - name: Upload analysis results
+      uses: actions/upload-artifact@v3
+      with:
+        name: analysis-results
+        path: outputs/

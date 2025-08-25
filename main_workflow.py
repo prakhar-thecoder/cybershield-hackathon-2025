@@ -1,16 +1,29 @@
 import math
+import argparse
 import analyze_posts
 import collect_posts
 import filter_high_reach_posts
 import prepare_insights
 
 
+def parse_arguments():
+    parser = argparse.ArgumentParser(description='Social media analysis workflow')
+    parser.add_argument('--hashtag', type=str, default="kashmirbanegapakistan",
+                      help='Hashtag to analyze (default: hashtag)')
+    parser.add_argument('--posts', type=int, default=100,
+                      help='Number of posts to fetch (default: 100)')
+    parser.add_argument('--likes-threshold', type=int, default=50,
+                      help='Minimum likes threshold for high-reach posts (default: 50)')
+    return parser.parse_args()
+
+
 if __name__ == "__main__":
-    hashtag = "kashmirbanegapakistan"
-    posts = 100
-    likes_threshold = 50
+    args = parse_arguments()
+    hashtag = args.hashtag
+    posts = args.posts
+    likes_threshold = args.likes_threshold
     
-    collect_posts.fetch_posts(hashtag, math.ceil(posts / 18))
+    collect_posts.fetch_posts(hashtag, math.ceil(posts / 20))
     filter_high_reach_posts.filter_high_reach_posts(hashtag, likes_threshold)
     analyze_posts.analyze_posts(hashtag)
     top_users_posts = prepare_insights.get_usernames_by_posts(hashtag)
