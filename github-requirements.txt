@@ -1,0 +1,12 @@
+pandas
+requests
+python-dotenv
+langchain
+langchain-google-genai
+pydantic
+google-generativeai
+jinja2
+asyncio
+playwright
+plotly==6.3.0
+kaleido==1.0.0
