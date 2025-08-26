@@ -60,6 +60,41 @@ def send_email(to_email, hashtag):
     except Exception as e:
         logging.error(f"Failed to send email: {str(e)}")
         return False
+    
+def send_acknowledgment_email(to_email, hashtag):
+    # Get credentials from environment variables
+    gmail_user = os.environ.get('GMAIL_USER')
+    gmail_password = os.environ.get('GMAIL_APP_PASSWORD').replace('"', "")
+
+    from_name = "Threat Hunters - CyberShield Hackathon"
+    subject = "We have received your request!"
+    body = f"Dear User,\n\nWe have successfully received your request for analyzing the hashtag - #{hashtag}. You will receive the report as soon as it is ready. We highly appreciate your patience till then!\n\nBest regards,\nThreat Hunters Team - CyberShield Hackathon"
+
+    if not gmail_user or not gmail_password:
+        logging.error("Gmail credentials not found in environment variables")
+        raise ValueError("Please set GMAIL_USER and GMAIL_APP_PASSWORD in .env file")
+
+    try:
+        # Create the email message
+        msg = MIMEMultipart()
+        msg['From'] = from_name
+        msg['To'] = to_email
+        msg['Subject'] = subject
+
+        # Add body to email
+        msg.attach(MIMEText(body, 'plain'))
+
+        # Create SMTP session
+        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
+            server.login(gmail_user, gmail_password)
+            server.send_message(msg)
+            
+        logging.info(f"Email sent successfully to {to_email}")
+        return True
+
+    except Exception as e:
+        logging.error(f"Failed to send email: {str(e)}")
+        return False
 
 if __name__ == "__main__":
     # Example usage
