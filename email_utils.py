@@ -17,7 +17,7 @@ load_dotenv()
 def send_email(to_email, hashtag):
     # Get credentials from environment variables
     gmail_user = os.getenv('GMAIL_USER')
-    gmail_password = os.getenv('GMAIL_APP_PASSWORD')
+    gmail_password = os.getenv('GMAIL_APP_PASSWORD').replace('"', "")
 
     from_name = "Threat Hunters - CyberShield Hackathon"
     subject = "Your Threat Inteliigence Report is Ready!"
