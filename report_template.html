@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-India Campaign Detection Report - Threat Hunters</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-white min-h-screen font-sans">
+    <div class="container mx-auto p-6">
+        <!-- Header Section -->
+        <div class="bg-gradient-to-r from-blue-800 to-blue-600 p-8 rounded-lg shadow-lg mb-8">
+            <div class="text-center text-5xl font-semibold text-blue-300">🛡️ THREAT HUNTERS 🛡️</div>
+            <br>
+            <h1 class="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-white mt-2">
+                Anti-India Campaign Detection Report
+            </h1>
+            <div class="text-center text-blue-200 mt-2">
+                National CyberShield Hackathon 2025 | Real-time Social Media Monioring for Anti-India Campaigns
+            </div>
+        </div>
+
+        <!-- Monitoring Details -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+            <h2 class="text-xl font-semibold text-cyan-400 text-center mb-4">Monitoring Details</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-700 p-4 rounded-lg text-center">
+                    <span class="text-blue-300 font-medium">Hashtags Monitored</span>
+                    <div id="hashtagsMonitored" class="text-white font-medium mt-2">#ExampleHashtag1, #ExampleHashtag2</div>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg text-center">
+                    <span class="text-blue-300 font-medium">Platforms Monitored</span>
+                    <div id="platformsMonitored" class="text-white font-medium mt-2">Twitter, Facebook</div>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg text-center">
+                    <span class="text-blue-300 font-medium">Date & Time of Generation</span>
+                    <div id="generationDateTime" class="text-white font-medium mt-2">Today</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+                <div id="totalPosts" class="text-4xl font-bold text-cyan-400">0</div>
+                <div class="text-white mt-2">Total Posts Analyzed</div>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+                <div id="antiIndiaPosts" class="text-4xl font-bold text-cyan-400">0</div>
+                <div class="text-white mt-2">Anti-India Posts Detected</div>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+                <div id="threatLevel" class="text-4xl font-bold text-cyan-400">0%</div>
+                <div class="text-white mt-2">Threat Level</div>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+                <div id="platformsMonitored" class="text-4xl font-bold text-cyan-400">0</div>
+                <div class="text-white mt-2">Platforms Monitored</div>
+            </div>
+        </div>
+
+        <!-- Top Users by Posts Section -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+            <h2 class="text-xl font-semibold text-cyan-400 text-center mb-4">Top Users by No. of Posts</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div>
+                    <table class="table-auto w-full text-left text-white">
+                        <thead>
+                            <tr class="bg-blue-800">
+                                <th class="px-4 py-2">User</th>
+                                <th class="px-4 py-2">No. of Posts</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersTableBody">
+                            <!-- Data will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="relative h-96">
+                    <canvas id="usersPostsChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+         <!-- Top Users by Reach Section -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+            <h2 class="text-xl font-semibold text-cyan-400 text-center mb-4">Top Users by Reach</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div>
+                    <table class="table-auto w-full text-left text-white">
+                        <thead>
+                            <tr class="bg-blue-800">
+                                <th class="px-4 py-2">User</th>
+                                <th class="px-4 py-2">Reach Score</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersTableBody">
+                            <!-- Data will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="relative h-96">
+                    <canvas id="usersReachChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center text-blue-200 text-sm mt-8">
+            <p>Generated by Threat Hunters Team | National CyberShield Hackathon 2025</p>
+            <p>Real-time monitoring and analysis of anti-India campaigns across digital platforms</p>
+        </div>
+    </div>
+</body>
+</html>
