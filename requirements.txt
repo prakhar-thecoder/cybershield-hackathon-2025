@@ -10,4 +10,3 @@ asyncio
 playwright
 plotly==6.3.0
 kaleido==1.0.0
-smtplib
