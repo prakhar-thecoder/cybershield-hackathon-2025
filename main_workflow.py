@@ -1,9 +1,11 @@
+import asyncio
 import math
 import argparse
 import analyze_posts
 import collect_posts
 import filter_high_reach_posts
 import prepare_insights
+import report_utils
 
 
 def parse_arguments():
@@ -31,3 +33,6 @@ if __name__ == "__main__":
 
     print("Top users by number of posts:", top_users_posts[:5])
     print("Top users by reach:", top_users_reach[:5])
+
+    report_location = asyncio.run(report_utils.prepare_report_async(hashtag))
+    print(f"Report generated: {report_location}")

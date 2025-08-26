@@ -35,6 +35,10 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+
+    - name: Install Playwright Browsers
+      run: |
+        python -m playwright install
         
     - name: Run analysis
       env:
@@ -51,4 +55,4 @@ jobs:
       with:
         name: analysis-results
         path: outputs/
-        compression-level: 6 # Optional: Optimized compression for better performance
+        compression-level: 6 # Optional: Optimized compression for better performanceexit
