@@ -18,6 +18,11 @@ on:
         required: false
         default: '50'
         type: string
+      email:
+        description: 'Email address to send the report to'
+        required: True
+        default: 'pnp14072005@gmail.com'
+        type: string
 
 jobs:
   analyze:
@@ -48,7 +53,8 @@ jobs:
         python -u main_workflow.py \
           --hashtag "${{ github.event.inputs.hashtag }}" \
           --posts "${{ github.event.inputs.posts }}" \
-          --likes-threshold "${{ github.event.inputs.likes_threshold }}"
+          --likes-threshold "${{ github.event.inputs.likes_threshold }}
+          --email "${{ github.event.inputs.email }}"
           
     - name: Upload analysis results
       uses: actions/upload-artifact@v4

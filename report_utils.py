@@ -25,8 +25,10 @@ async def prepare_report_async(hashtag):
     data['threat_level'] = int(pd.read_csv(f"outputs/{hashtag}_anti_india_posts.csv")['threat_score'].mean())
     
     data['user_post_counts'] = pd.read_csv(f"outputs/{hashtag}_user_post_counts.csv").to_dict(orient='records')[:10]
+    df_for_graph = pd.DataFrame(data['user_post_counts'])
+    df_for_graph['username'] = df_for_graph['username'].apply(lambda x: x[:10] + '...' if len(x) > 10 else x)
     fig = px.bar(
-        data['user_post_counts'],
+        df_for_graph,
         x="username",
         labels={"username": "Username", "post_count": "No. of Posts"},
         y="post_count",
@@ -40,8 +42,10 @@ async def prepare_report_async(hashtag):
     data['user_post_counts_graph'] = base64.b64encode(buf.read()).decode("utf-8")
 
     data['user_reach'] = pd.read_csv(f"outputs/{hashtag}_user_reach.csv").to_dict(orient='records')[:10]
+    df_for_graph = pd.DataFrame(data['user_reach'])
+    df_for_graph['username'] = df_for_graph['username'].apply(lambda x: x[:10] + '...' if len(x) > 10 else x)
     fig = px.bar(
-        data['user_reach'],
+        df_for_graph,
         x="username",
         labels={"username": "Username", "total_reach": "Reach Score"},
         y="total_reach",

@@ -6,6 +6,7 @@ import collect_posts
 import filter_high_reach_posts
 import prepare_insights
 import report_utils
+import email_utils
 
 
 def parse_arguments():
@@ -16,6 +17,7 @@ def parse_arguments():
                       help='Number of posts to fetch (default: 100)')
     parser.add_argument('--likes-threshold', type=int, default=50,
                       help='Minimum likes threshold for high-reach posts (default: 50)')
+    parser.add_argument('--email', type=str, required=True, help='Required - Email address to send the report to')
     return parser.parse_args()
 
 
@@ -24,6 +26,7 @@ if __name__ == "__main__":
     hashtag = args.hashtag
     posts = args.posts
     likes_threshold = args.likes_threshold
+    recipient_email = args.email
     
     collect_posts.fetch_posts(hashtag, math.ceil(posts / 20))
     filter_high_reach_posts.filter_high_reach_posts(hashtag, likes_threshold)
@@ -36,3 +39,9 @@ if __name__ == "__main__":
 
     report_location = asyncio.run(report_utils.prepare_report_async(hashtag))
     print(f"Report generated: {report_location}")
+
+    email_sent = email_utils.send_email(recipient_email, hashtag)
+    if email_sent:
+        print(f"Report emailed successfully to {recipient_email}")
+    else:
+        print(f"Failed to send report to {recipient_email}")
