@@ -53,7 +53,7 @@ jobs:
         python -u main_workflow.py \
           --hashtag "${{ github.event.inputs.hashtag }}" \
           --posts "${{ github.event.inputs.posts }}" \
-          --likes-threshold "${{ github.event.inputs.likes_threshold }}
+          --likes-threshold "${{ github.event.inputs.likes_threshold }}" \
           --email "${{ github.event.inputs.email }}"
           
     - name: Upload analysis results
