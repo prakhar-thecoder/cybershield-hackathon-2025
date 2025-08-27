@@ -20,10 +20,24 @@ def home():
         return redirect(url_for('success'))
     return render_template('index.html')
 
+@app.route('/demo', methods=['GET', 'POST'])
+def demo():
+    if request.method == 'POST':
+        email = request.form.get('email')
+        print(f"Email: {email}")
+        
+        email_utils.send_demo_email(email)
+        return redirect(url_for('demo_success'))
+    return render_template('demo.html')
+
 
 @app.route('/success')
 def success():
     return render_template('success.html')
+
+@app.route('/demo-success')
+def demo_success():
+    return render_template('demo_success.html')
 
 
 if __name__ == '__main__':

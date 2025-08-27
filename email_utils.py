@@ -69,7 +69,7 @@ def send_demo_email(to_email):
     from_name = "Threat Hunters - CyberShield Hackathon"
     subject = "Your Threat Inteliigence Report is Ready!"
     body = f"Dear User,\n\nPlease find attached the demo threat intelligence report for your requested hashtag - #gazwaehind.\n\nBest regards,\nThreat Hunters Team - CyberShield Hackathon"
-    attachment_path = f"sample_data/gazwaehind_report.pdf"
+    attachment_path = f"static/sample_data/gazwaehind_report.pdf"
 
     if not gmail_user or not gmail_password:
         logging.error("Gmail credentials not found in environment variables")

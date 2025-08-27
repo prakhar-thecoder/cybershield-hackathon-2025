@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Submission Successful - Threat Hunters</title>
+  <title>Report Generation Successful - Threat Hunters</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -19,13 +19,17 @@
     </div>
     
     <!-- Heading -->
-    <h1 class="text-3xl font-extrabold text-green-400 mb-4">Submission Successful</h1>
+    <h1 class="text-3xl font-extrabold text-green-400 mb-4">Report Generation Successful</h1>
     
     <!-- Messages -->
-    <p class="text-lg text-blue-200 mb-3">We have sent an acknowledgement to your email.</p>
-    <p class="text-base text-gray-300 mb-3">You will receive your detailed report at the provided email once it is ready.</p>
+    <p class="text-base text-gray-300 mb-3">We have emailed the report to you!</p>
     <p class="text-sm text-yellow-300 font-semibold flex items-center justify-center gap-2">
       <i class="fas fa-exclamation-triangle"></i> Check your spam folder if the mail is missing.
+    </p>
+
+    <!-- Direct View -->
+    <p class="text-base text-cyan-300 mt-2 mb-6">
+      You can also <a href="{{ url_for('static', filename='sample_data/gazwaehind_report.pdf') }}" target="_blank" class="underline hover:text-cyan-200 font-semibold">view the report directly here</a>.
     </p>
     
     <!-- Divider -->

@@ -29,12 +29,19 @@
       <span>Limited hardware & API quotas · Inputs restricted for prototype</span>
     </div>
 
+    <div class="text-center mb-6">
+      <a href="{{ url_for('static', filename='sample_data/sample_report.pdf') }}" target="_blank" 
+         class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out flex items-center justify-center gap-2">
+        <i class="fas fa-file-pdf"></i> View Sample Report
+      </a>
+    </div>
+
     <!-- Additional Notice -->
     <div class="bg-gray-700 text-gray-200 p-5 rounded-lg mb-10 text-center text-sm md:text-base leading-relaxed">
       <p>
         Due to limited infrastructure resources, the scraping process may take additional time to complete. 
         For a faster overview, you may explore our platform using 
-        <a href="/demo" class="text-cyan-400 hover:underline font-semibold">pre-scraped demo data by clicking here!</a>.
+        <a href="/demo" class="text-cyan-400 underline hover:text-cyan-300 font-semibold">pre-processed data by clicking here!</a>.
       </p>
     </div>
 
