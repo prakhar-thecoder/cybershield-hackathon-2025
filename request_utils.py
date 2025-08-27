@@ -1,5 +1,9 @@
+import os
 import requests
 import json
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def get_posts(hashtag, next_id=None):
     base_url = "https://www.instagram.com/api/v1/fbsearch/web/top_serp/"
@@ -121,13 +125,40 @@ def get_posts(hashtag, next_id=None):
         print(f"An unexpected error occurred: {e}")
         return [], None
 
-if __name__ == '__main__':
-    hashtag_to_search = "freekashmir"
-    posts, next_cursor = get_posts(hashtag_to_search)
+def trigger_workflow(hashtag, posts, like_threshold, email):
+    github_api_url = "https://api.github.com/repos/prakhar-thecoder/cybershield-hackathon-2025/actions/workflows/social_media_analysis.yml/dispatches"
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "Authorization": f"Bearer {os.environ.get('GIHTUB_PAT')}",
+        "X-GitHub-Api-Version": "2022-11-28"
+    }
+    payload = {
+        "ref": "main",
+        "inputs": {
+            "hashtag": hashtag,
+            "posts": str(posts),
+            "likes_threshold": str(like_threshold),
+            "email": email,
+            "type": "full"
+        }
+    }
     
-    if posts:
-        print(f"Found {len(posts)} posts for #{hashtag_to_search}")
-        print(json.dumps(posts, indent=4))
-        print(f"\nNext cursor for pagination: {next_cursor}")
-    else:
-        print(f"Could not retrieve posts for #{hashtag_to_search}")
+    try:
+        response = requests.post(github_api_url, headers=headers, json=payload)
+        print(response.text)
+        response.raise_for_status()
+        print("Workflow triggered successfully.")
+    except requests.exceptions.RequestException as e:
+        print(f"Failed to trigger workflow: {e}")
+
+if __name__ == '__main__':
+    # hashtag_to_search = "freekashmir"
+    # posts, next_cursor = get_posts(hashtag_to_search)
+    
+    # if posts:
+    #     print(f"Found {len(posts)} posts for #{hashtag_to_search}")
+    #     print(json.dumps(posts, indent=4))
+    #     print(f"\nNext cursor for pagination: {next_cursor}")
+    # else:
+    #     print(f"Could not retrieve posts for #{hashtag_to_search}")
+    trigger_workflow("freekashmir", 20, 10, "pnp14072005@gmail.com")
