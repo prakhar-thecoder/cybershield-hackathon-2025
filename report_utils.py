@@ -7,7 +7,7 @@ import pandas as pd
 import plotly.express as px
 import io, base64
 
-async def prepare_report_async(hashtag):
+async def prepare_report_async(hashtag, sample=False):
     # Create output directory if it doesn't exist
     os.makedirs('outputs', exist_ok=True)
 

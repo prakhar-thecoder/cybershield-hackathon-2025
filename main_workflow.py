@@ -18,6 +18,8 @@ def parse_arguments():
     parser.add_argument('--likes-threshold', type=int, default=50,
                       help='Minimum likes threshold for high-reach posts (default: 50)')
     parser.add_argument('--email', type=str, required=True, help='Required - Email address to send the report to')
+    parser.add_argument('--type', type=str, default="full", help='Run with sample or full data (default: full)')
+
     return parser.parse_args()
 
 
@@ -27,21 +29,30 @@ if __name__ == "__main__":
     posts = args.posts
     likes_threshold = args.likes_threshold
     recipient_email = args.email
+    run_type = args.type
+
+    if run_type == "full":
+        collect_posts.fetch_posts(hashtag, math.ceil(posts / 20))
+        filter_high_reach_posts.filter_high_reach_posts(hashtag, likes_threshold)
+        analyze_posts.analyze_posts(hashtag)
+        top_users_posts = prepare_insights.get_usernames_by_posts(hashtag)
+        top_users_reach = prepare_insights.get_usernames_by_reach(hashtag)
+
+        print("Top users by number of posts:", top_users_posts[:5])
+        print("Top users by reach:", top_users_reach[:5])
+
+        report_location = asyncio.run(report_utils.prepare_report_async(hashtag))
+        print(f"Report generated: {report_location}")
+
+        email_sent = email_utils.send_email(recipient_email, hashtag)
+        if email_sent:
+            print(f"Report emailed successfully to {recipient_email}")
+        else:
+            print(f"Failed to send report to {recipient_email}")
     
-    collect_posts.fetch_posts(hashtag, math.ceil(posts / 20))
-    filter_high_reach_posts.filter_high_reach_posts(hashtag, likes_threshold)
-    analyze_posts.analyze_posts(hashtag)
-    top_users_posts = prepare_insights.get_usernames_by_posts(hashtag)
-    top_users_reach = prepare_insights.get_usernames_by_reach(hashtag)
-
-    print("Top users by number of posts:", top_users_posts[:5])
-    print("Top users by reach:", top_users_reach[:5])
-
-    report_location = asyncio.run(report_utils.prepare_report_async(hashtag))
-    print(f"Report generated: {report_location}")
-
-    email_sent = email_utils.send_email(recipient_email, hashtag)
-    if email_sent:
-        print(f"Report emailed successfully to {recipient_email}")
     else:
-        print(f"Failed to send report to {recipient_email}")
+        email_sent = email_utils.send_demo_email(recipient_email)
+        if email_sent:
+            print(f"Report emailed successfully to {recipient_email}")
+        else:
+            print(f"Failed to send report to {recipient_email}")
