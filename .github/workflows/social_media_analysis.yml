@@ -23,6 +23,11 @@ on:
         required: True
         default: 'pnp14072005@gmail.com'
         type: string
+      type:
+        description: 'Type of analysis: sample or full'
+        required: True
+        default: 'full'
+        type: string
 
 jobs:
   analyze:
@@ -54,7 +59,8 @@ jobs:
           --hashtag "${{ github.event.inputs.hashtag }}" \
           --posts "${{ github.event.inputs.posts }}" \
           --likes-threshold "${{ github.event.inputs.likes_threshold }}" \
-          --email "${{ github.event.inputs.email }}"
+          --email "${{ github.event.inputs.email }}" \
+          --type "${{ github.event.inputs.type }}"
           
     - name: Upload analysis results
       uses: actions/upload-artifact@v4
