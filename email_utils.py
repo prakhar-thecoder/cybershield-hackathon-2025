@@ -63,7 +63,6 @@ def send_email(to_email, hashtag):
 
 def send_demo_email(to_email):
     # Get credentials from environment variables
-    print(os.environ)
     gmail_user = os.getenv('GMAIL_USER')
     gmail_password = os.getenv('GMAIL_APP_PASSWORD').replace('"', "")
 
