@@ -27,9 +27,15 @@
 
     <div class="flex flex-col md:flex-row items-center justify-center gap-6 mb-6 align-center">
       <div class="text-center6">
+      <a href="{{ url_for('static', filename='keywords_database.csv') }}" target="_blank" 
+          class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out">
+        <i class="fa-solid fa-database"></i> Download Keywords Database
+      </a>
+      </div>
+      <div class="text-center6">
       <a href="{{ url_for('static', filename='sample_data/sample_report.pdf') }}" target="_blank" 
           class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out">
-        <i class="fas fa-file-pdf"></i> View Sample Report
+        <i class="fa-solid fa-file-pdf"></i> View Sample Report
       </a>
     </div>
       <div class="text-center">

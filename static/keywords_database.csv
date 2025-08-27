@@ -1,0 +1,501 @@
+ID,Keyword/Phrase,Category,Risk Level,Sample Context,Engagement Weight
+1,break india,Separatist,Medium,Example usage of 'break india' in a post about separatist,1300
+2,anti hindu,Cultural/Religious,High,Example usage of 'anti hindu' in a post about cultural/religious,603
+3,#indiamustfall,Hashtags,High,Example usage of '#indiamustfall' in a post about hashtags,1137
+4,khalistan zindabad,Separatist,Medium,Example usage of 'khalistan zindabad' in a post about separatist,78
+5,attack india,Violent,Medium,Example usage of 'attack india' in a post about violent,3302
+6,fake indian news,Disinformation,Low,Example usage of 'fake indian news' in a post about disinformation,1891
+7,secede from india,Separatist,High,Example usage of 'secede from india' in a post about separatist,4139
+8,#endindia,Hashtags,Medium,Example usage of '#endindia' in a post about hashtags,4980
+9,destroy delhi,Violent,High,Example usage of 'destroy delhi' in a post about violent,4457
+10,fake indian news,Disinformation,High,Example usage of 'fake indian news' in a post about disinformation,1452
+11,anti modi,Anti-Government,Medium,Example usage of 'anti modi' in a post about anti-government,1234
+12,fake indian news,Disinformation,Low,Example usage of 'fake indian news' in a post about disinformation,4942
+13,resign pm,Anti-Government,Medium,Example usage of 'resign pm' in a post about anti-government,1620
+14,#indiaterror,Hashtags,High,Example usage of '#indiaterror' in a post about hashtags,3339
+15,khalistan zindabad,Separatist,Medium,Example usage of 'khalistan zindabad' in a post about separatist,2682
+16,down with govt,Anti-Government,Medium,Example usage of 'down with govt' in a post about anti-government,2501
+17,#endindia,Hashtags,Medium,Example usage of '#endindia' in a post about hashtags,4881
+18,india spreading lies,Disinformation,Medium,Example usage of 'india spreading lies' in a post about disinformation,496
+19,#boycottindia,Hashtags,Low,Example usage of '#boycottindia' in a post about hashtags,2224
+20,#endindia,Hashtags,Low,Example usage of '#endindia' in a post about hashtags,4228
+21,khalistan zindabad,Separatist,Medium,Example usage of 'khalistan zindabad' in a post about separatist,1796
+22,#boycottindia,Hashtags,Medium,Example usage of '#boycottindia' in a post about hashtags,4827
+23,down with govt,Anti-Government,High,Example usage of 'down with govt' in a post about anti-government,2363
+24,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,4139
+25,#indiamustfall,Hashtags,High,Example usage of '#indiamustfall' in a post about hashtags,3572
+26,anti hindu,Cultural/Religious,High,Example usage of 'anti hindu' in a post about cultural/religious,656
+27,down with govt,Anti-Government,High,Example usage of 'down with govt' in a post about anti-government,2270
+28,khalistan zindabad,Separatist,Medium,Example usage of 'khalistan zindabad' in a post about separatist,3311
+29,india spreading lies,Disinformation,High,Example usage of 'india spreading lies' in a post about disinformation,4342
+30,free kashmir,Separatist,Medium,Example usage of 'free kashmir' in a post about separatist,837
+31,stop diwali,Cultural/Religious,High,Example usage of 'stop diwali' in a post about cultural/religious,3364
+32,down with govt,Anti-Government,Medium,Example usage of 'down with govt' in a post about anti-government,2146
+33,anti modi,Anti-Government,High,Example usage of 'anti modi' in a post about anti-government,931
+34,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,4715
+35,armed struggle,Violent,Medium,Example usage of 'armed struggle' in a post about violent,419
+36,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,1592
+37,free kashmir,Separatist,Low,Example usage of 'free kashmir' in a post about separatist,1093
+38,break india,Separatist,Medium,Example usage of 'break india' in a post about separatist,1245
+39,#indiaterror,Hashtags,Medium,Example usage of '#indiaterror' in a post about hashtags,1620
+40,anti hindu,Cultural/Religious,Low,Example usage of 'anti hindu' in a post about cultural/religious,4135
+41,#endindia,Hashtags,Medium,Example usage of '#endindia' in a post about hashtags,4080
+42,dictatorship india,Anti-Government,High,Example usage of 'dictatorship india' in a post about anti-government,3573
+43,india spreading lies,Disinformation,High,Example usage of 'india spreading lies' in a post about disinformation,1964
+44,down with govt,Anti-Government,High,Example usage of 'down with govt' in a post about anti-government,1158
+45,#endindia,Hashtags,Low,Example usage of '#endindia' in a post about hashtags,3672
+46,khalistan zindabad,Separatist,Medium,Example usage of 'khalistan zindabad' in a post about separatist,711
+47,anti modi,Anti-Government,Medium,Example usage of 'anti modi' in a post about anti-government,4040
+48,remove temples,Cultural/Religious,Medium,Example usage of 'remove temples' in a post about cultural/religious,4839
+49,#indiaterror,Hashtags,Low,Example usage of '#indiaterror' in a post about hashtags,3898
+50,propaganda india,Disinformation,Medium,Example usage of 'propaganda india' in a post about disinformation,2201
+51,#indiaterror,Hashtags,Medium,Example usage of '#indiaterror' in a post about hashtags,2193
+52,#indiamustfall,Hashtags,Medium,Example usage of '#indiamustfall' in a post about hashtags,3128
+53,destroy delhi,Violent,Medium,Example usage of 'destroy delhi' in a post about violent,4686
+54,propaganda india,Disinformation,Medium,Example usage of 'propaganda india' in a post about disinformation,761
+55,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,1025
+56,resign pm,Anti-Government,High,Example usage of 'resign pm' in a post about anti-government,2322
+57,kill forces,Violent,Medium,Example usage of 'kill forces' in a post about violent,756
+58,attack india,Violent,Medium,Example usage of 'attack india' in a post about violent,4110
+59,attack india,Violent,Low,Example usage of 'attack india' in a post about violent,562
+60,anti modi,Anti-Government,High,Example usage of 'anti modi' in a post about anti-government,4519
+61,secede from india,Separatist,Medium,Example usage of 'secede from india' in a post about separatist,378
+62,khalistan zindabad,Separatist,Low,Example usage of 'khalistan zindabad' in a post about separatist,3712
+63,anti modi,Anti-Government,Medium,Example usage of 'anti modi' in a post about anti-government,682
+64,attack india,Violent,Low,Example usage of 'attack india' in a post about violent,2729
+65,down with govt,Anti-Government,High,Example usage of 'down with govt' in a post about anti-government,530
+66,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,2705
+67,dictatorship india,Anti-Government,High,Example usage of 'dictatorship india' in a post about anti-government,1882
+68,armed struggle,Violent,Medium,Example usage of 'armed struggle' in a post about violent,196
+69,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,1221
+70,dictatorship india,Anti-Government,Low,Example usage of 'dictatorship india' in a post about anti-government,1176
+71,attack india,Violent,Medium,Example usage of 'attack india' in a post about violent,578
+72,armed struggle,Violent,High,Example usage of 'armed struggle' in a post about violent,2269
+73,down with govt,Anti-Government,Low,Example usage of 'down with govt' in a post about anti-government,947
+74,#indiaterror,Hashtags,Medium,Example usage of '#indiaterror' in a post about hashtags,2856
+75,destroy delhi,Violent,High,Example usage of 'destroy delhi' in a post about violent,1508
+76,#endindia,Hashtags,Medium,Example usage of '#endindia' in a post about hashtags,4455
+77,anti modi,Anti-Government,Medium,Example usage of 'anti modi' in a post about anti-government,468
+78,propaganda india,Disinformation,High,Example usage of 'propaganda india' in a post about disinformation,2686
+79,propaganda india,Disinformation,High,Example usage of 'propaganda india' in a post about disinformation,2240
+80,dictatorship india,Anti-Government,High,Example usage of 'dictatorship india' in a post about anti-government,3813
+81,#endindia,Hashtags,Medium,Example usage of '#endindia' in a post about hashtags,3653
+82,#boycottindia,Hashtags,Medium,Example usage of '#boycottindia' in a post about hashtags,3093
+83,stop diwali,Cultural/Religious,Medium,Example usage of 'stop diwali' in a post about cultural/religious,3728
+84,#indiaterror,Hashtags,Medium,Example usage of '#indiaterror' in a post about hashtags,2618
+85,free kashmir,Separatist,High,Example usage of 'free kashmir' in a post about separatist,955
+86,secede from india,Separatist,Medium,Example usage of 'secede from india' in a post about separatist,1792
+87,secede from india,Separatist,Low,Example usage of 'secede from india' in a post about separatist,195
+88,dictatorship india,Anti-Government,Low,Example usage of 'dictatorship india' in a post about anti-government,1459
+89,fake indian news,Disinformation,Low,Example usage of 'fake indian news' in a post about disinformation,1355
+90,stop diwali,Cultural/Religious,Medium,Example usage of 'stop diwali' in a post about cultural/religious,4625
+91,#boycottindia,Hashtags,Medium,Example usage of '#boycottindia' in a post about hashtags,2806
+92,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,1642
+93,destroy delhi,Violent,Medium,Example usage of 'destroy delhi' in a post about violent,2349
+94,propaganda india,Disinformation,Low,Example usage of 'propaganda india' in a post about disinformation,4939
+95,#endindia,Hashtags,Medium,Example usage of '#endindia' in a post about hashtags,959
+96,india spreading lies,Disinformation,High,Example usage of 'india spreading lies' in a post about disinformation,4916
+97,anti modi,Anti-Government,Medium,Example usage of 'anti modi' in a post about anti-government,867
+98,attack india,Violent,High,Example usage of 'attack india' in a post about violent,3975
+99,#endindia,Hashtags,Medium,Example usage of '#endindia' in a post about hashtags,245
+100,destroy delhi,Violent,Medium,Example usage of 'destroy delhi' in a post about violent,3660
+101,attack india,Violent,Low,Example usage of 'attack india' in a post about violent,2832
+102,stop diwali,Cultural/Religious,Medium,Example usage of 'stop diwali' in a post about cultural/religious,2831
+103,down with govt,Anti-Government,High,Example usage of 'down with govt' in a post about anti-government,4046
+104,#indiamustfall,Hashtags,Medium,Example usage of '#indiamustfall' in a post about hashtags,4616
+105,fake indian news,Disinformation,High,Example usage of 'fake indian news' in a post about disinformation,1022
+106,break india,Separatist,High,Example usage of 'break india' in a post about separatist,191
+107,down with govt,Anti-Government,High,Example usage of 'down with govt' in a post about anti-government,1769
+108,free kashmir,Separatist,Medium,Example usage of 'free kashmir' in a post about separatist,4954
+109,down with govt,Anti-Government,Low,Example usage of 'down with govt' in a post about anti-government,2203
+110,anti modi,Anti-Government,Medium,Example usage of 'anti modi' in a post about anti-government,978
+111,ban hindu,Cultural/Religious,High,Example usage of 'ban hindu' in a post about cultural/religious,4682
+112,ban hindu,Cultural/Religious,Medium,Example usage of 'ban hindu' in a post about cultural/religious,1800
+113,india spreading lies,Disinformation,Medium,Example usage of 'india spreading lies' in a post about disinformation,675
+114,secede from india,Separatist,Medium,Example usage of 'secede from india' in a post about separatist,4479
+115,armed struggle,Violent,Medium,Example usage of 'armed struggle' in a post about violent,1408
+116,destroy delhi,Violent,Medium,Example usage of 'destroy delhi' in a post about violent,4642
+117,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,3736
+118,khalistan zindabad,Separatist,Medium,Example usage of 'khalistan zindabad' in a post about separatist,973
+119,attack india,Violent,High,Example usage of 'attack india' in a post about violent,3379
+120,anti modi,Anti-Government,Medium,Example usage of 'anti modi' in a post about anti-government,1682
+121,stop diwali,Cultural/Religious,Medium,Example usage of 'stop diwali' in a post about cultural/religious,2076
+122,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,2650
+123,resign pm,Anti-Government,Medium,Example usage of 'resign pm' in a post about anti-government,4637
+124,#boycottindia,Hashtags,Medium,Example usage of '#boycottindia' in a post about hashtags,3971
+125,kill forces,Violent,Medium,Example usage of 'kill forces' in a post about violent,325
+126,fake indian news,Disinformation,High,Example usage of 'fake indian news' in a post about disinformation,3156
+127,khalistan zindabad,Separatist,Low,Example usage of 'khalistan zindabad' in a post about separatist,4234
+128,#indiaterror,Hashtags,Medium,Example usage of '#indiaterror' in a post about hashtags,1931
+129,attack india,Violent,Medium,Example usage of 'attack india' in a post about violent,3574
+130,india spreading lies,Disinformation,Low,Example usage of 'india spreading lies' in a post about disinformation,866
+131,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,295
+132,destroy delhi,Violent,High,Example usage of 'destroy delhi' in a post about violent,1758
+133,secede from india,Separatist,Medium,Example usage of 'secede from india' in a post about separatist,4218
+134,attack india,Violent,Medium,Example usage of 'attack india' in a post about violent,2651
+135,india spreading lies,Disinformation,Medium,Example usage of 'india spreading lies' in a post about disinformation,4137
+136,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,2543
+137,fake indian news,Disinformation,High,Example usage of 'fake indian news' in a post about disinformation,2144
+138,#boycottindia,Hashtags,High,Example usage of '#boycottindia' in a post about hashtags,1748
+139,resign pm,Anti-Government,Medium,Example usage of 'resign pm' in a post about anti-government,1103
+140,dictatorship india,Anti-Government,High,Example usage of 'dictatorship india' in a post about anti-government,804
+141,india spreading lies,Disinformation,Medium,Example usage of 'india spreading lies' in a post about disinformation,2325
+142,india spreading lies,Disinformation,Medium,Example usage of 'india spreading lies' in a post about disinformation,1235
+143,kill forces,Violent,High,Example usage of 'kill forces' in a post about violent,3200
+144,secede from india,Separatist,Low,Example usage of 'secede from india' in a post about separatist,1524
+145,armed struggle,Violent,High,Example usage of 'armed struggle' in a post about violent,2585
+146,#boycottindia,Hashtags,Medium,Example usage of '#boycottindia' in a post about hashtags,2732
+147,propaganda india,Disinformation,Medium,Example usage of 'propaganda india' in a post about disinformation,3004
+148,ban hindu,Cultural/Religious,Medium,Example usage of 'ban hindu' in a post about cultural/religious,3976
+149,attack india,Violent,High,Example usage of 'attack india' in a post about violent,2126
+150,anti modi,Anti-Government,High,Example usage of 'anti modi' in a post about anti-government,3497
+151,secede from india,Separatist,High,Example usage of 'secede from india' in a post about separatist,1804
+152,khalistan zindabad,Separatist,Medium,Example usage of 'khalistan zindabad' in a post about separatist,3767
+153,down with govt,Anti-Government,Medium,Example usage of 'down with govt' in a post about anti-government,2946
+154,#indiaterror,Hashtags,Low,Example usage of '#indiaterror' in a post about hashtags,3178
+155,stop diwali,Cultural/Religious,Medium,Example usage of 'stop diwali' in a post about cultural/religious,3242
+156,stop diwali,Cultural/Religious,Low,Example usage of 'stop diwali' in a post about cultural/religious,3723
+157,#boycottindia,Hashtags,Low,Example usage of '#boycottindia' in a post about hashtags,1098
+158,#endindia,Hashtags,High,Example usage of '#endindia' in a post about hashtags,377
+159,resign pm,Anti-Government,High,Example usage of 'resign pm' in a post about anti-government,1673
+160,stop diwali,Cultural/Religious,Medium,Example usage of 'stop diwali' in a post about cultural/religious,4564
+161,ban hindu,Cultural/Religious,High,Example usage of 'ban hindu' in a post about cultural/religious,3272
+162,break india,Separatist,High,Example usage of 'break india' in a post about separatist,788
+163,free kashmir,Separatist,High,Example usage of 'free kashmir' in a post about separatist,2201
+164,free kashmir,Separatist,Low,Example usage of 'free kashmir' in a post about separatist,3537
+165,khalistan zindabad,Separatist,High,Example usage of 'khalistan zindabad' in a post about separatist,657
+166,down with govt,Anti-Government,Medium,Example usage of 'down with govt' in a post about anti-government,257
+167,free kashmir,Separatist,Medium,Example usage of 'free kashmir' in a post about separatist,4107
+168,armed struggle,Violent,High,Example usage of 'armed struggle' in a post about violent,4166
+169,secede from india,Separatist,Medium,Example usage of 'secede from india' in a post about separatist,863
+170,resign pm,Anti-Government,Medium,Example usage of 'resign pm' in a post about anti-government,3701
+171,dictatorship india,Anti-Government,Medium,Example usage of 'dictatorship india' in a post about anti-government,513
+172,#indiaterror,Hashtags,High,Example usage of '#indiaterror' in a post about hashtags,1985
+173,kill forces,Violent,Medium,Example usage of 'kill forces' in a post about violent,1498
+174,#endindia,Hashtags,Low,Example usage of '#endindia' in a post about hashtags,1481
+175,free kashmir,Separatist,Low,Example usage of 'free kashmir' in a post about separatist,4687
+176,fake indian news,Disinformation,Low,Example usage of 'fake indian news' in a post about disinformation,2546
+177,armed struggle,Violent,Low,Example usage of 'armed struggle' in a post about violent,4029
+178,anti hindu,Cultural/Religious,Low,Example usage of 'anti hindu' in a post about cultural/religious,4197
+179,down with govt,Anti-Government,High,Example usage of 'down with govt' in a post about anti-government,4126
+180,anti hindu,Cultural/Religious,Medium,Example usage of 'anti hindu' in a post about cultural/religious,4465
+181,kill forces,Violent,High,Example usage of 'kill forces' in a post about violent,29
+182,#endindia,Hashtags,Medium,Example usage of '#endindia' in a post about hashtags,3650
+183,khalistan zindabad,Separatist,Medium,Example usage of 'khalistan zindabad' in a post about separatist,4435
+184,destroy delhi,Violent,Medium,Example usage of 'destroy delhi' in a post about violent,3889
+185,remove temples,Cultural/Religious,High,Example usage of 'remove temples' in a post about cultural/religious,599
+186,propaganda india,Disinformation,Low,Example usage of 'propaganda india' in a post about disinformation,1270
+187,india spreading lies,Disinformation,Medium,Example usage of 'india spreading lies' in a post about disinformation,3688
+188,anti hindu,Cultural/Religious,Medium,Example usage of 'anti hindu' in a post about cultural/religious,4770
+189,kill forces,Violent,Medium,Example usage of 'kill forces' in a post about violent,1392
+190,fake indian news,Disinformation,High,Example usage of 'fake indian news' in a post about disinformation,506
+191,kill forces,Violent,Medium,Example usage of 'kill forces' in a post about violent,948
+192,#indiamustfall,Hashtags,Medium,Example usage of '#indiamustfall' in a post about hashtags,2771
+193,secede from india,Separatist,Medium,Example usage of 'secede from india' in a post about separatist,4117
+194,india spreading lies,Disinformation,Medium,Example usage of 'india spreading lies' in a post about disinformation,4655
+195,#endindia,Hashtags,Low,Example usage of '#endindia' in a post about hashtags,3622
+196,free kashmir,Separatist,High,Example usage of 'free kashmir' in a post about separatist,1025
+197,#indiaterror,Hashtags,High,Example usage of '#indiaterror' in a post about hashtags,2279
+198,free kashmir,Separatist,Low,Example usage of 'free kashmir' in a post about separatist,3221
+199,anti modi,Anti-Government,Low,Example usage of 'anti modi' in a post about anti-government,3063
+200,resign pm,Anti-Government,Medium,Example usage of 'resign pm' in a post about anti-government,2707
+201,free kashmir,Separatist,Low,Example usage of 'free kashmir' in a post about separatist,4622
+202,kill forces,Violent,Medium,Example usage of 'kill forces' in a post about violent,4540
+203,anti modi,Anti-Government,Medium,Example usage of 'anti modi' in a post about anti-government,4413
+204,anti hindu,Cultural/Religious,High,Example usage of 'anti hindu' in a post about cultural/religious,3216
+205,kill forces,Violent,Medium,Example usage of 'kill forces' in a post about violent,2369
+206,resign pm,Anti-Government,High,Example usage of 'resign pm' in a post about anti-government,2572
+207,propaganda india,Disinformation,Medium,Example usage of 'propaganda india' in a post about disinformation,4085
+208,resign pm,Anti-Government,Medium,Example usage of 'resign pm' in a post about anti-government,3634
+209,armed struggle,Violent,Medium,Example usage of 'armed struggle' in a post about violent,3995
+210,#indiamustfall,Hashtags,Medium,Example usage of '#indiamustfall' in a post about hashtags,4777
+211,attack india,Violent,Medium,Example usage of 'attack india' in a post about violent,3031
+212,anti modi,Anti-Government,Medium,Example usage of 'anti modi' in a post about anti-government,4768
+213,kill forces,Violent,Medium,Example usage of 'kill forces' in a post about violent,1480
+214,armed struggle,Violent,Medium,Example usage of 'armed struggle' in a post about violent,3974
+215,remove temples,Cultural/Religious,Medium,Example usage of 'remove temples' in a post about cultural/religious,4986
+216,anti modi,Anti-Government,High,Example usage of 'anti modi' in a post about anti-government,3299
+217,remove temples,Cultural/Religious,Low,Example usage of 'remove temples' in a post about cultural/religious,631
+218,#boycottindia,Hashtags,Medium,Example usage of '#boycottindia' in a post about hashtags,4861
+219,remove temples,Cultural/Religious,Medium,Example usage of 'remove temples' in a post about cultural/religious,197
+220,attack india,Violent,High,Example usage of 'attack india' in a post about violent,121
+221,#boycottindia,Hashtags,Low,Example usage of '#boycottindia' in a post about hashtags,4255
+222,#indiaterror,Hashtags,Medium,Example usage of '#indiaterror' in a post about hashtags,667
+223,remove temples,Cultural/Religious,Low,Example usage of 'remove temples' in a post about cultural/religious,1406
+224,anti modi,Anti-Government,High,Example usage of 'anti modi' in a post about anti-government,1583
+225,attack india,Violent,Medium,Example usage of 'attack india' in a post about violent,2452
+226,anti modi,Anti-Government,High,Example usage of 'anti modi' in a post about anti-government,2193
+227,free kashmir,Separatist,Medium,Example usage of 'free kashmir' in a post about separatist,4432
+228,#boycottindia,Hashtags,Low,Example usage of '#boycottindia' in a post about hashtags,237
+229,anti hindu,Cultural/Religious,Medium,Example usage of 'anti hindu' in a post about cultural/religious,854
+230,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,2438
+231,armed struggle,Violent,Medium,Example usage of 'armed struggle' in a post about violent,3217
+232,khalistan zindabad,Separatist,Low,Example usage of 'khalistan zindabad' in a post about separatist,4396
+233,destroy delhi,Violent,High,Example usage of 'destroy delhi' in a post about violent,2889
+234,destroy delhi,Violent,Low,Example usage of 'destroy delhi' in a post about violent,1302
+235,free kashmir,Separatist,Medium,Example usage of 'free kashmir' in a post about separatist,1007
+236,fake indian news,Disinformation,High,Example usage of 'fake indian news' in a post about disinformation,192
+237,down with govt,Anti-Government,High,Example usage of 'down with govt' in a post about anti-government,4049
+238,remove temples,Cultural/Religious,High,Example usage of 'remove temples' in a post about cultural/religious,3840
+239,attack india,Violent,Medium,Example usage of 'attack india' in a post about violent,1226
+240,ban hindu,Cultural/Religious,Low,Example usage of 'ban hindu' in a post about cultural/religious,2175
+241,#indiamustfall,Hashtags,Low,Example usage of '#indiamustfall' in a post about hashtags,996
+242,down with govt,Anti-Government,High,Example usage of 'down with govt' in a post about anti-government,4348
+243,#boycottindia,Hashtags,Medium,Example usage of '#boycottindia' in a post about hashtags,3358
+244,attack india,Violent,Medium,Example usage of 'attack india' in a post about violent,1934
+245,dictatorship india,Anti-Government,Low,Example usage of 'dictatorship india' in a post about anti-government,3065
+246,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,3540
+247,dictatorship india,Anti-Government,Low,Example usage of 'dictatorship india' in a post about anti-government,4115
+248,secede from india,Separatist,Medium,Example usage of 'secede from india' in a post about separatist,4407
+249,#indiamustfall,Hashtags,Medium,Example usage of '#indiamustfall' in a post about hashtags,4966
+250,khalistan zindabad,Separatist,High,Example usage of 'khalistan zindabad' in a post about separatist,989
+251,propaganda india,Disinformation,Medium,Example usage of 'propaganda india' in a post about disinformation,4425
+252,khalistan zindabad,Separatist,High,Example usage of 'khalistan zindabad' in a post about separatist,2271
+253,india spreading lies,Disinformation,Medium,Example usage of 'india spreading lies' in a post about disinformation,2604
+254,break india,Separatist,Low,Example usage of 'break india' in a post about separatist,2803
+255,#endindia,Hashtags,Medium,Example usage of '#endindia' in a post about hashtags,4221
+256,break india,Separatist,Medium,Example usage of 'break india' in a post about separatist,228
+257,#indiamustfall,Hashtags,Medium,Example usage of '#indiamustfall' in a post about hashtags,3712
+258,#endindia,Hashtags,High,Example usage of '#endindia' in a post about hashtags,241
+259,armed struggle,Violent,Low,Example usage of 'armed struggle' in a post about violent,2571
+260,ban hindu,Cultural/Religious,High,Example usage of 'ban hindu' in a post about cultural/religious,1752
+261,down with govt,Anti-Government,Medium,Example usage of 'down with govt' in a post about anti-government,4441
+262,free kashmir,Separatist,Low,Example usage of 'free kashmir' in a post about separatist,341
+263,destroy delhi,Violent,Medium,Example usage of 'destroy delhi' in a post about violent,2577
+264,break india,Separatist,Medium,Example usage of 'break india' in a post about separatist,3086
+265,destroy delhi,Violent,High,Example usage of 'destroy delhi' in a post about violent,4336
+266,destroy delhi,Violent,Medium,Example usage of 'destroy delhi' in a post about violent,713
+267,india spreading lies,Disinformation,High,Example usage of 'india spreading lies' in a post about disinformation,3075
+268,attack india,Violent,High,Example usage of 'attack india' in a post about violent,3952
+269,india spreading lies,Disinformation,High,Example usage of 'india spreading lies' in a post about disinformation,1601
+270,free kashmir,Separatist,Low,Example usage of 'free kashmir' in a post about separatist,2246
+271,#indiamustfall,Hashtags,Medium,Example usage of '#indiamustfall' in a post about hashtags,872
+272,remove temples,Cultural/Religious,Medium,Example usage of 'remove temples' in a post about cultural/religious,4332
+273,secede from india,Separatist,High,Example usage of 'secede from india' in a post about separatist,2909
+274,#boycottindia,Hashtags,Medium,Example usage of '#boycottindia' in a post about hashtags,552
+275,#indiamustfall,Hashtags,High,Example usage of '#indiamustfall' in a post about hashtags,776
+276,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,4274
+277,#indiaterror,Hashtags,Low,Example usage of '#indiaterror' in a post about hashtags,4074
+278,anti modi,Anti-Government,High,Example usage of 'anti modi' in a post about anti-government,1317
+279,down with govt,Anti-Government,Medium,Example usage of 'down with govt' in a post about anti-government,1715
+280,break india,Separatist,Low,Example usage of 'break india' in a post about separatist,2185
+281,down with govt,Anti-Government,High,Example usage of 'down with govt' in a post about anti-government,3236
+282,resign pm,Anti-Government,Medium,Example usage of 'resign pm' in a post about anti-government,2245
+283,khalistan zindabad,Separatist,Medium,Example usage of 'khalistan zindabad' in a post about separatist,219
+284,stop diwali,Cultural/Religious,Low,Example usage of 'stop diwali' in a post about cultural/religious,651
+285,armed struggle,Violent,Medium,Example usage of 'armed struggle' in a post about violent,3883
+286,ban hindu,Cultural/Religious,Low,Example usage of 'ban hindu' in a post about cultural/religious,3591
+287,armed struggle,Violent,High,Example usage of 'armed struggle' in a post about violent,882
+288,armed struggle,Violent,Medium,Example usage of 'armed struggle' in a post about violent,3265
+289,#boycottindia,Hashtags,Medium,Example usage of '#boycottindia' in a post about hashtags,290
+290,khalistan zindabad,Separatist,Medium,Example usage of 'khalistan zindabad' in a post about separatist,1068
+291,break india,Separatist,High,Example usage of 'break india' in a post about separatist,445
+292,fake indian news,Disinformation,High,Example usage of 'fake indian news' in a post about disinformation,4996
+293,#indiaterror,Hashtags,Medium,Example usage of '#indiaterror' in a post about hashtags,4782
+294,down with govt,Anti-Government,Medium,Example usage of 'down with govt' in a post about anti-government,2853
+295,secede from india,Separatist,High,Example usage of 'secede from india' in a post about separatist,3366
+296,destroy delhi,Violent,High,Example usage of 'destroy delhi' in a post about violent,1767
+297,propaganda india,Disinformation,Medium,Example usage of 'propaganda india' in a post about disinformation,201
+298,india spreading lies,Disinformation,High,Example usage of 'india spreading lies' in a post about disinformation,1460
+299,stop diwali,Cultural/Religious,High,Example usage of 'stop diwali' in a post about cultural/religious,3676
+300,fake indian news,Disinformation,High,Example usage of 'fake indian news' in a post about disinformation,1281
+301,kill forces,Violent,Low,Example usage of 'kill forces' in a post about violent,3047
+302,ban hindu,Cultural/Religious,Low,Example usage of 'ban hindu' in a post about cultural/religious,2404
+303,#indiamustfall,Hashtags,High,Example usage of '#indiamustfall' in a post about hashtags,427
+304,india spreading lies,Disinformation,Medium,Example usage of 'india spreading lies' in a post about disinformation,2418
+305,propaganda india,Disinformation,High,Example usage of 'propaganda india' in a post about disinformation,589
+306,kill forces,Violent,High,Example usage of 'kill forces' in a post about violent,2192
+307,india spreading lies,Disinformation,Medium,Example usage of 'india spreading lies' in a post about disinformation,2217
+308,#indiaterror,Hashtags,Medium,Example usage of '#indiaterror' in a post about hashtags,3106
+309,khalistan zindabad,Separatist,Medium,Example usage of 'khalistan zindabad' in a post about separatist,2323
+310,#indiamustfall,Hashtags,High,Example usage of '#indiamustfall' in a post about hashtags,2054
+311,armed struggle,Violent,High,Example usage of 'armed struggle' in a post about violent,4307
+312,destroy delhi,Violent,Medium,Example usage of 'destroy delhi' in a post about violent,3128
+313,#indiamustfall,Hashtags,High,Example usage of '#indiamustfall' in a post about hashtags,4631
+314,down with govt,Anti-Government,Low,Example usage of 'down with govt' in a post about anti-government,2276
+315,anti hindu,Cultural/Religious,Low,Example usage of 'anti hindu' in a post about cultural/religious,3879
+316,khalistan zindabad,Separatist,Medium,Example usage of 'khalistan zindabad' in a post about separatist,2203
+317,fake indian news,Disinformation,High,Example usage of 'fake indian news' in a post about disinformation,1701
+318,attack india,Violent,High,Example usage of 'attack india' in a post about violent,4287
+319,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,4790
+320,fake indian news,Disinformation,High,Example usage of 'fake indian news' in a post about disinformation,309
+321,#boycottindia,Hashtags,Medium,Example usage of '#boycottindia' in a post about hashtags,4883
+322,stop diwali,Cultural/Religious,Low,Example usage of 'stop diwali' in a post about cultural/religious,418
+323,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,2924
+324,kill forces,Violent,Low,Example usage of 'kill forces' in a post about violent,4461
+325,destroy delhi,Violent,Low,Example usage of 'destroy delhi' in a post about violent,4747
+326,khalistan zindabad,Separatist,High,Example usage of 'khalistan zindabad' in a post about separatist,3757
+327,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,3088
+328,india spreading lies,Disinformation,Low,Example usage of 'india spreading lies' in a post about disinformation,742
+329,#boycottindia,Hashtags,Medium,Example usage of '#boycottindia' in a post about hashtags,3101
+330,kill forces,Violent,High,Example usage of 'kill forces' in a post about violent,2985
+331,khalistan zindabad,Separatist,Medium,Example usage of 'khalistan zindabad' in a post about separatist,1603
+332,dictatorship india,Anti-Government,Medium,Example usage of 'dictatorship india' in a post about anti-government,1796
+333,free kashmir,Separatist,High,Example usage of 'free kashmir' in a post about separatist,1759
+334,attack india,Violent,High,Example usage of 'attack india' in a post about violent,1623
+335,break india,Separatist,Medium,Example usage of 'break india' in a post about separatist,3202
+336,resign pm,Anti-Government,High,Example usage of 'resign pm' in a post about anti-government,2380
+337,destroy delhi,Violent,High,Example usage of 'destroy delhi' in a post about violent,3525
+338,anti hindu,Cultural/Religious,High,Example usage of 'anti hindu' in a post about cultural/religious,4295
+339,destroy delhi,Violent,Medium,Example usage of 'destroy delhi' in a post about violent,3707
+340,#boycottindia,Hashtags,Medium,Example usage of '#boycottindia' in a post about hashtags,3504
+341,#endindia,Hashtags,High,Example usage of '#endindia' in a post about hashtags,2278
+342,ban hindu,Cultural/Religious,High,Example usage of 'ban hindu' in a post about cultural/religious,2135
+343,anti hindu,Cultural/Religious,Medium,Example usage of 'anti hindu' in a post about cultural/religious,97
+344,break india,Separatist,High,Example usage of 'break india' in a post about separatist,115
+345,kill forces,Violent,Medium,Example usage of 'kill forces' in a post about violent,4186
+346,#endindia,Hashtags,Low,Example usage of '#endindia' in a post about hashtags,545
+347,anti modi,Anti-Government,High,Example usage of 'anti modi' in a post about anti-government,2048
+348,#indiaterror,Hashtags,Medium,Example usage of '#indiaterror' in a post about hashtags,3286
+349,kill forces,Violent,Low,Example usage of 'kill forces' in a post about violent,1753
+350,attack india,Violent,High,Example usage of 'attack india' in a post about violent,1918
+351,attack india,Violent,Low,Example usage of 'attack india' in a post about violent,4308
+352,attack india,Violent,Medium,Example usage of 'attack india' in a post about violent,2285
+353,#endindia,Hashtags,Medium,Example usage of '#endindia' in a post about hashtags,3067
+354,#indiaterror,Hashtags,High,Example usage of '#indiaterror' in a post about hashtags,868
+355,down with govt,Anti-Government,Medium,Example usage of 'down with govt' in a post about anti-government,1060
+356,kill forces,Violent,Medium,Example usage of 'kill forces' in a post about violent,4554
+357,ban hindu,Cultural/Religious,Medium,Example usage of 'ban hindu' in a post about cultural/religious,4765
+358,propaganda india,Disinformation,Medium,Example usage of 'propaganda india' in a post about disinformation,1417
+359,attack india,Violent,Medium,Example usage of 'attack india' in a post about violent,4453
+360,anti hindu,Cultural/Religious,Medium,Example usage of 'anti hindu' in a post about cultural/religious,4811
+361,kill forces,Violent,High,Example usage of 'kill forces' in a post about violent,3961
+362,dictatorship india,Anti-Government,Medium,Example usage of 'dictatorship india' in a post about anti-government,1906
+363,remove temples,Cultural/Religious,Medium,Example usage of 'remove temples' in a post about cultural/religious,1581
+364,armed struggle,Violent,Low,Example usage of 'armed struggle' in a post about violent,2442
+365,attack india,Violent,High,Example usage of 'attack india' in a post about violent,398
+366,remove temples,Cultural/Religious,Medium,Example usage of 'remove temples' in a post about cultural/religious,700
+367,stop diwali,Cultural/Religious,High,Example usage of 'stop diwali' in a post about cultural/religious,2005
+368,khalistan zindabad,Separatist,Medium,Example usage of 'khalistan zindabad' in a post about separatist,4571
+369,stop diwali,Cultural/Religious,Medium,Example usage of 'stop diwali' in a post about cultural/religious,3449
+370,fake indian news,Disinformation,Low,Example usage of 'fake indian news' in a post about disinformation,4426
+371,#boycottindia,Hashtags,High,Example usage of '#boycottindia' in a post about hashtags,232
+372,secede from india,Separatist,Low,Example usage of 'secede from india' in a post about separatist,2284
+373,break india,Separatist,High,Example usage of 'break india' in a post about separatist,4205
+374,stop diwali,Cultural/Religious,Medium,Example usage of 'stop diwali' in a post about cultural/religious,4535
+375,kill forces,Violent,High,Example usage of 'kill forces' in a post about violent,3659
+376,anti modi,Anti-Government,Low,Example usage of 'anti modi' in a post about anti-government,4409
+377,india spreading lies,Disinformation,Medium,Example usage of 'india spreading lies' in a post about disinformation,3906
+378,anti hindu,Cultural/Religious,Medium,Example usage of 'anti hindu' in a post about cultural/religious,1529
+379,india spreading lies,Disinformation,Medium,Example usage of 'india spreading lies' in a post about disinformation,2850
+380,attack india,Violent,High,Example usage of 'attack india' in a post about violent,2770
+381,armed struggle,Violent,Low,Example usage of 'armed struggle' in a post about violent,2097
+382,fake indian news,Disinformation,Low,Example usage of 'fake indian news' in a post about disinformation,2603
+383,kill forces,Violent,High,Example usage of 'kill forces' in a post about violent,3723
+384,break india,Separatist,Low,Example usage of 'break india' in a post about separatist,2053
+385,break india,Separatist,High,Example usage of 'break india' in a post about separatist,3118
+386,ban hindu,Cultural/Religious,Low,Example usage of 'ban hindu' in a post about cultural/religious,2431
+387,anti hindu,Cultural/Religious,Low,Example usage of 'anti hindu' in a post about cultural/religious,3488
+388,dictatorship india,Anti-Government,Medium,Example usage of 'dictatorship india' in a post about anti-government,650
+389,#boycottindia,Hashtags,Low,Example usage of '#boycottindia' in a post about hashtags,1810
+390,destroy delhi,Violent,Medium,Example usage of 'destroy delhi' in a post about violent,4095
+391,free kashmir,Separatist,Medium,Example usage of 'free kashmir' in a post about separatist,2457
+392,#indiaterror,Hashtags,Medium,Example usage of '#indiaterror' in a post about hashtags,4266
+393,#indiamustfall,Hashtags,Medium,Example usage of '#indiamustfall' in a post about hashtags,4461
+394,stop diwali,Cultural/Religious,Medium,Example usage of 'stop diwali' in a post about cultural/religious,607
+395,free kashmir,Separatist,High,Example usage of 'free kashmir' in a post about separatist,4747
+396,#endindia,Hashtags,High,Example usage of '#endindia' in a post about hashtags,2287
+397,dictatorship india,Anti-Government,High,Example usage of 'dictatorship india' in a post about anti-government,1569
+398,stop diwali,Cultural/Religious,Low,Example usage of 'stop diwali' in a post about cultural/religious,2746
+399,dictatorship india,Anti-Government,Medium,Example usage of 'dictatorship india' in a post about anti-government,4347
+400,dictatorship india,Anti-Government,High,Example usage of 'dictatorship india' in a post about anti-government,4093
+401,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,3140
+402,khalistan zindabad,Separatist,Medium,Example usage of 'khalistan zindabad' in a post about separatist,3647
+403,#indiamustfall,Hashtags,Low,Example usage of '#indiamustfall' in a post about hashtags,3547
+404,anti modi,Anti-Government,Medium,Example usage of 'anti modi' in a post about anti-government,3774
+405,stop diwali,Cultural/Religious,Medium,Example usage of 'stop diwali' in a post about cultural/religious,207
+406,free kashmir,Separatist,Low,Example usage of 'free kashmir' in a post about separatist,2606
+407,remove temples,Cultural/Religious,Medium,Example usage of 'remove temples' in a post about cultural/religious,1914
+408,break india,Separatist,Medium,Example usage of 'break india' in a post about separatist,3790
+409,secede from india,Separatist,High,Example usage of 'secede from india' in a post about separatist,2581
+410,stop diwali,Cultural/Religious,High,Example usage of 'stop diwali' in a post about cultural/religious,3415
+411,india spreading lies,Disinformation,High,Example usage of 'india spreading lies' in a post about disinformation,2853
+412,secede from india,Separatist,Low,Example usage of 'secede from india' in a post about separatist,2268
+413,#indiaterror,Hashtags,Medium,Example usage of '#indiaterror' in a post about hashtags,2308
+414,#indiaterror,Hashtags,Medium,Example usage of '#indiaterror' in a post about hashtags,1341
+415,attack india,Violent,High,Example usage of 'attack india' in a post about violent,1682
+416,#indiaterror,Hashtags,Low,Example usage of '#indiaterror' in a post about hashtags,3130
+417,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,2994
+418,india spreading lies,Disinformation,Low,Example usage of 'india spreading lies' in a post about disinformation,2533
+419,remove temples,Cultural/Religious,Low,Example usage of 'remove temples' in a post about cultural/religious,3606
+420,break india,Separatist,Medium,Example usage of 'break india' in a post about separatist,1871
+421,propaganda india,Disinformation,Medium,Example usage of 'propaganda india' in a post about disinformation,4781
+422,kill forces,Violent,Medium,Example usage of 'kill forces' in a post about violent,3840
+423,kill forces,Violent,Low,Example usage of 'kill forces' in a post about violent,4778
+424,anti modi,Anti-Government,Low,Example usage of 'anti modi' in a post about anti-government,2069
+425,stop diwali,Cultural/Religious,Medium,Example usage of 'stop diwali' in a post about cultural/religious,4509
+426,remove temples,Cultural/Religious,Medium,Example usage of 'remove temples' in a post about cultural/religious,58
+427,break india,Separatist,High,Example usage of 'break india' in a post about separatist,2759
+428,#endindia,Hashtags,High,Example usage of '#endindia' in a post about hashtags,4462
+429,attack india,Violent,Medium,Example usage of 'attack india' in a post about violent,969
+430,armed struggle,Violent,Medium,Example usage of 'armed struggle' in a post about violent,4101
+431,dictatorship india,Anti-Government,High,Example usage of 'dictatorship india' in a post about anti-government,3672
+432,destroy delhi,Violent,Low,Example usage of 'destroy delhi' in a post about violent,3654
+433,dictatorship india,Anti-Government,High,Example usage of 'dictatorship india' in a post about anti-government,1552
+434,fake indian news,Disinformation,High,Example usage of 'fake indian news' in a post about disinformation,3381
+435,remove temples,Cultural/Religious,Medium,Example usage of 'remove temples' in a post about cultural/religious,4923
+436,resign pm,Anti-Government,High,Example usage of 'resign pm' in a post about anti-government,2142
+437,resign pm,Anti-Government,Low,Example usage of 'resign pm' in a post about anti-government,575
+438,propaganda india,Disinformation,Medium,Example usage of 'propaganda india' in a post about disinformation,1555
+439,down with govt,Anti-Government,Low,Example usage of 'down with govt' in a post about anti-government,3728
+440,anti hindu,Cultural/Religious,High,Example usage of 'anti hindu' in a post about cultural/religious,4015
+441,remove temples,Cultural/Religious,Medium,Example usage of 'remove temples' in a post about cultural/religious,1128
+442,anti hindu,Cultural/Religious,Medium,Example usage of 'anti hindu' in a post about cultural/religious,4537
+443,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,1189
+444,attack india,Violent,Medium,Example usage of 'attack india' in a post about violent,3812
+445,india spreading lies,Disinformation,Low,Example usage of 'india spreading lies' in a post about disinformation,4928
+446,#boycottindia,Hashtags,Medium,Example usage of '#boycottindia' in a post about hashtags,1244
+447,remove temples,Cultural/Religious,Low,Example usage of 'remove temples' in a post about cultural/religious,1167
+448,secede from india,Separatist,Medium,Example usage of 'secede from india' in a post about separatist,2781
+449,fake indian news,Disinformation,High,Example usage of 'fake indian news' in a post about disinformation,4906
+450,propaganda india,Disinformation,Medium,Example usage of 'propaganda india' in a post about disinformation,2545
+451,propaganda india,Disinformation,Low,Example usage of 'propaganda india' in a post about disinformation,943
+452,fake indian news,Disinformation,Medium,Example usage of 'fake indian news' in a post about disinformation,3235
+453,down with govt,Anti-Government,Medium,Example usage of 'down with govt' in a post about anti-government,4622
+454,attack india,Violent,Medium,Example usage of 'attack india' in a post about violent,4357
+455,resign pm,Anti-Government,High,Example usage of 'resign pm' in a post about anti-government,3903
+456,armed struggle,Violent,Medium,Example usage of 'armed struggle' in a post about violent,4577
+457,dictatorship india,Anti-Government,High,Example usage of 'dictatorship india' in a post about anti-government,966
+458,#boycottindia,Hashtags,High,Example usage of '#boycottindia' in a post about hashtags,3288
+459,khalistan zindabad,Separatist,Medium,Example usage of 'khalistan zindabad' in a post about separatist,2218
+460,#endindia,Hashtags,Medium,Example usage of '#endindia' in a post about hashtags,778
+461,propaganda india,Disinformation,Medium,Example usage of 'propaganda india' in a post about disinformation,4822
+462,armed struggle,Violent,High,Example usage of 'armed struggle' in a post about violent,4307
+463,dictatorship india,Anti-Government,Medium,Example usage of 'dictatorship india' in a post about anti-government,2399
+464,armed struggle,Violent,Low,Example usage of 'armed struggle' in a post about violent,4197
+465,india spreading lies,Disinformation,Medium,Example usage of 'india spreading lies' in a post about disinformation,2876
+466,propaganda india,Disinformation,Medium,Example usage of 'propaganda india' in a post about disinformation,3626
+467,break india,Separatist,High,Example usage of 'break india' in a post about separatist,2010
+468,india spreading lies,Disinformation,Low,Example usage of 'india spreading lies' in a post about disinformation,4719
+469,remove temples,Cultural/Religious,Medium,Example usage of 'remove temples' in a post about cultural/religious,2762
+470,fake indian news,Disinformation,High,Example usage of 'fake indian news' in a post about disinformation,108
+471,resign pm,Anti-Government,Low,Example usage of 'resign pm' in a post about anti-government,4207
+472,india spreading lies,Disinformation,Medium,Example usage of 'india spreading lies' in a post about disinformation,1771
+473,down with govt,Anti-Government,Medium,Example usage of 'down with govt' in a post about anti-government,4708
+474,#indiamustfall,Hashtags,Medium,Example usage of '#indiamustfall' in a post about hashtags,4611
+475,#endindia,Hashtags,Medium,Example usage of '#endindia' in a post about hashtags,22
+476,down with govt,Anti-Government,Medium,Example usage of 'down with govt' in a post about anti-government,1499
+477,resign pm,Anti-Government,Low,Example usage of 'resign pm' in a post about anti-government,3516
+478,resign pm,Anti-Government,Medium,Example usage of 'resign pm' in a post about anti-government,4292
+479,khalistan zindabad,Separatist,Medium,Example usage of 'khalistan zindabad' in a post about separatist,813
+480,resign pm,Anti-Government,Medium,Example usage of 'resign pm' in a post about anti-government,4387
+481,khalistan zindabad,Separatist,Medium,Example usage of 'khalistan zindabad' in a post about separatist,690
+482,stop diwali,Cultural/Religious,High,Example usage of 'stop diwali' in a post about cultural/religious,511
+483,ban hindu,Cultural/Religious,High,Example usage of 'ban hindu' in a post about cultural/religious,1588
+484,india spreading lies,Disinformation,High,Example usage of 'india spreading lies' in a post about disinformation,700
+485,stop diwali,Cultural/Religious,Medium,Example usage of 'stop diwali' in a post about cultural/religious,404
+486,secede from india,Separatist,Medium,Example usage of 'secede from india' in a post about separatist,1945
+487,propaganda india,Disinformation,Medium,Example usage of 'propaganda india' in a post about disinformation,956
+488,down with govt,Anti-Government,Medium,Example usage of 'down with govt' in a post about anti-government,4010
+489,#endindia,Hashtags,Medium,Example usage of '#endindia' in a post about hashtags,4298
+490,remove temples,Cultural/Religious,Medium,Example usage of 'remove temples' in a post about cultural/religious,3323
+491,destroy delhi,Violent,High,Example usage of 'destroy delhi' in a post about violent,42
+492,#indiamustfall,Hashtags,Low,Example usage of '#indiamustfall' in a post about hashtags,4614
+493,kill forces,Violent,Low,Example usage of 'kill forces' in a post about violent,2925
+494,india spreading lies,Disinformation,Low,Example usage of 'india spreading lies' in a post about disinformation,1127
+495,india spreading lies,Disinformation,High,Example usage of 'india spreading lies' in a post about disinformation,4947
+496,attack india,Violent,Medium,Example usage of 'attack india' in a post about violent,853
+497,#endindia,Hashtags,Low,Example usage of '#endindia' in a post about hashtags,1398
+498,armed struggle,Violent,High,Example usage of 'armed struggle' in a post about violent,4261
+499,attack india,Violent,High,Example usage of 'attack india' in a post about violent,471
+500,remove temples,Cultural/Religious,Medium,Example usage of 'remove temples' in a post about cultural/religious,1306
