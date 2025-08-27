@@ -16,7 +16,7 @@ def home():
         print(f"No. of Posts: {num_posts}")
         print(f"Email: {email}")
         
-        request_utils.trigger_workflow(hashtag, num_posts, 20, email)
+        request_utils.trigger_workflow(hashtag, num_posts, 10, email)
         email_utils.send_acknowledgment_email(email, hashtag)
 
         return redirect(url_for('success'))
