@@ -47,10 +47,10 @@ async def prepare_report_async(hashtag, sample=False):
     fig = px.bar(
         df_for_graph,
         x="username",
-        labels={"username": "Username", "total_reach": "Reach Score"},
+        labels={"username": "Username", "total_reach": "Engagement Score"},
         y="total_reach",
         color="username",
-        title="Top 10 Users by Reach"
+        title="Top 10 Users by Engagement"
     )
     fig.update_layout(showlegend=False)
     buf = io.BytesIO()

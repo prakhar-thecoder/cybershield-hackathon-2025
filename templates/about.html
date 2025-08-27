@@ -25,9 +25,9 @@
     <!-- GitHub Repo -->
     <div class="text-center">
       <a href="https://github.com/prakhar-thecoder/cybershield-hackathon-2025" target="_blank" 
-         class="text-cyan-400 hover:text-cyan-300 font-bold text-lg">
+         class="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-cyan-300 hover:text-cyan-200 font-bold py-2 px-5 rounded-lg shadow-md transition duration-300 ease-in-out">
         <i class="fab fa-github"></i> 
-        <span class="underline">View Project on GitHub</span>
+        <span>View Project on GitHub</span>
       </a>
     </div>
     
@@ -37,37 +37,42 @@
         <i class="fas fa-exclamation-circle"></i> Problem Statement
       </h2>
       <p class="text-gray-300 leading-relaxed">
-        Social media platforms are increasingly exploited to spread disinformation and anti-national propaganda. 
-        Manual detection of such campaigns is slow, inefficient, and often misses fast-spreading harmful content. 
-        There is a strong need for an automated system that can detect, analyze, and report anti-India campaigns in real-time.
+        Develop a system to detect anti-India campaigns on digital platforms by building a keyword database 
+        and using engagement analysis to identify key drivers, supporting early detection.
       </p>
     </section>
     
-    <!-- Our Solution -->
+    <!-- Description -->
     <section>
       <h2 class="text-2xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
-        <i class="fas fa-lightbulb"></i> Our Solution
+        <i class="fas fa-align-left"></i> Description
       </h2>
       <p class="text-gray-300 leading-relaxed">
-        Threat Hunters is a prototype monitoring system that scrapes social media data, 
-        processes it using Natural Language Processing (NLP), and identifies anti-India sentiments. 
-        It provides real-time dashboards, generates automated reports, and delivers insights directly to users’ emails 
-        to assist cybersecurity teams and law enforcement agencies in tracking harmful campaigns.
+        The proposed system combines keyword-based monitoring with engagement analysis to identify anti-India campaigns. 
+        A dynamic database of flagged terms, phrases, and hashtags is created and updated. Using AI and natural language processing (NLP), 
+        the system scans social media, forums, and websites to detect content matching this database. 
+        Engagement metrics like likes, shares, comments, and network reach are then analyzed to identify influential accounts 
+        and viral trends. This enables early detection of coordinated disinformation or propaganda efforts, 
+        supporting timely countermeasures by security agencies and helping preserve national integrity in the digital space.
       </p>
     </section>
     
-    <!-- Key Features -->
+    <!-- Key Tasks -->
     <section>
       <h2 class="text-2xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
-        <i class="fas fa-star"></i> Key Features
+        <i class="fas fa-tasks"></i> Key Tasks
       </h2>
       <ul class="list-disc list-inside text-gray-300 space-y-2">
-        <li>Hashtag-based monitoring for targeted campaign detection</li>
-        <li>Scraping and analysis of posts from social media platforms</li>
-        <li>AI-powered sentiment classification for detecting anti-India content</li>
-        <li>Interactive dashboard with real-time statistics and visualizations</li>
-        <li>Automated PDF report generation with email delivery</li>
-        <li>Prototype optimized for hackathon-scale limited resources</li>
+        <li>Build and maintain a dynamic keyword, hashtag, and phrase database linked to anti-India sentiments.</li>
+        <li>Develop real-time monitoring tools to scan social media, forums, and websites for flagged content.</li>
+        <li>Implement NLP techniques to filter and classify relevant anti-India content at scale.</li>
+        <li>Conduct engagement analysis on likes, shares, comments, and reach to track viral content.</li>
+        <li>Identify key influencers, pages, or groups spreading harmful content and map their networks.</li>
+        <li>Detect coordinated campaigns based on synchronized posting or hashtag usage.</li>
+        <li>Set up an alert system for trending narratives and high-engagement propaganda.</li>
+        <li>Design a visualization dashboard for flagged content, engagement data, and influencer networks.</li>
+        <li>Ensure compliance with free speech and privacy laws while monitoring digital platforms.</li>
+        <li>Provide actionable reports to government and security agencies for preventive countermeasures.</li>
       </ul>
     </section>
     
@@ -79,7 +84,7 @@
       <ul class="list-disc list-inside text-gray-300 space-y-2">
         <li><span class="font-semibold">Backend:</span> Python (Flask)</li>
         <li><span class="font-semibold">Frontend:</span> HTML, TailwindCSS, JavaScript</li>
-        <li><span class="font-semibold">Data Processing:</span> NLP models, Sentiment Analysis</li>
+        <li><span class="font-semibold">Data Processing:</span> NLP models, Engagement Analysis</li>
         <li><span class="font-semibold">Visualization:</span> Plotly, Chart.js</li>
       </ul>
     </section>
