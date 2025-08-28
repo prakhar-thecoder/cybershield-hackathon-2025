@@ -21,12 +21,13 @@ def analyze_posts(hashtag):
         try:
             print(f"Analyzing post {index + 1}/{len(posts_df)}")
             analysis = ai_utils.analyze_text(post['caption'])
-            if analysis.is_anti_india:
+            print(f"Analysis result: {analysis}")
+            if analysis["is_anti_india"]:
                 post_dict = post.to_dict()
                 # Add the three analysis fields directly
-                post_dict['is_anti_india'] = analysis.is_anti_india
-                post_dict['threat_score'] = analysis.threat_score
-                post_dict['justification'] = analysis.justification
+                post_dict['is_anti_india'] = analysis['is_anti_india']
+                post_dict['threat_score'] = analysis['threat_score']
+                post_dict['justification'] = analysis['justification']
                 analyzed_data.append(post_dict)
         except Exception as e:
             print(f"Could not analyze post {index}. Error: {e}")
