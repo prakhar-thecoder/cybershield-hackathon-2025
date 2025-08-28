@@ -2,6 +2,7 @@ pandas
 requests
 python-dotenv
 langchain
+langchain_groq
 langchain-google-genai
 pydantic
 google-generativeai
