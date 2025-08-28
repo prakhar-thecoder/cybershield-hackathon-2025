@@ -52,7 +52,6 @@ def analyze_text(statement: str):
     attempts = 0
     max_attempts = key_manager.key_count
 
-    # Direct substitution of {statement_input}
     formatted_prompt = prompt_template.replace("{statement_input}", statement)
 
     while attempts < max_attempts:
@@ -64,14 +63,21 @@ def analyze_text(statement: str):
             response = model.invoke(formatted_prompt)
             if not response.content:
                 raise ValueError("Empty response from model")
-
-            # Try parse as JSON directly
-            result = json.loads(response.content)
-            return result
+            return json.loads(response.content)
 
         except Exception as e:
-            logging.warning(f"Key {current_key_prefix} failed: {e}")
-            errors.append(str(e))
+            err_msg = str(e)
+            logging.warning(f"Key {current_key_prefix} failed: {err_msg}")
+            errors.append(err_msg)
+
+            # immediate switch on rate-limit
+            if "429" in err_msg or "Too Many Requests" in err_msg:
+                logging.info(f"429 detected. Switching key immediately.")
+                key_manager.switch_key()
+                attempts += 1
+                continue
+
+            # other error -> still switch and retry
             key_manager.switch_key()
             attempts += 1
 
