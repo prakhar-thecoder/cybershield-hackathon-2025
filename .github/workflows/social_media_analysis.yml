@@ -55,6 +55,7 @@ jobs:
         GEMINI_KEYS: ${{ secrets.GEMINI_KEYS }}
         GMAIL_USER: ${{ secrets.GMAIL_USER }}
         GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        GROQ_KEYS: ${{ secrets.GROQ_KEYS }}
         PYTHONUNBUFFERED: "1"  # This ensures Python output is unbuffered
       run: |
         python -u main_workflow.py \
