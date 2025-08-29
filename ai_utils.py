@@ -4,6 +4,7 @@ import logging
 from itertools import cycle
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
+import httpx
 
 # Load environment variables
 load_dotenv()
@@ -39,13 +40,14 @@ key_manager = KeyManager(keys.split(","))
 def get_model():
     return ChatGroq(
         api_key=key_manager.current_key.strip(),
-        model="openai/gpt-oss-120b"
+        model="openai/gpt-oss-120b",
+        max_retries=0
     )
 
 with open("cybershield_template.json", "r", encoding="utf-8") as f:
     template_data = json.load(f)
 
-prompt_template = template_data["template"]  # just grab the template string
+prompt_template = template_data["template"]
 
 def analyze_text(statement: str):
     errors = []
@@ -65,19 +67,20 @@ def analyze_text(statement: str):
                 raise ValueError("Empty response from model")
             return json.loads(response.content)
 
+        except httpx.HTTPStatusError as e:
+            status = e.response.status_code
+            logging.warning(f"Key {current_key_prefix} failed with HTTP {status}")
+            if status == 429:
+                logging.info("429 detected. Switching key immediately.")
+            key_manager.switch_key()
+            attempts += 1
+
         except Exception as e:
             err_msg = str(e)
+            status_code = getattr(e, "status_code", None)
             logging.warning(f"Key {current_key_prefix} failed: {err_msg}")
-            errors.append(err_msg)
-
-            # immediate switch on rate-limit
-            if "429" in err_msg or "Too Many Requests" in err_msg:
-                logging.info(f"429 detected. Switching key immediately.")
-                key_manager.switch_key()
-                attempts += 1
-                continue
-
-            # other error -> still switch and retry
+            if status_code == 429 or "429" in err_msg or "Too Many Requests" in err_msg:
+                logging.info("429 detected. Switching key immediately.")
             key_manager.switch_key()
             attempts += 1
 
@@ -92,8 +95,6 @@ But they love Ghazwa-E-Hind
 Do you agree..?
 
 #gazwaehind #congress
-
 """
     result = analyze_text(sample_text)
     print(result["is_anti_india"])
-    # print(json.dumps(result, indent=2, ensure_ascii=False))
