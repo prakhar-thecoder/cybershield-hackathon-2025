@@ -1,100 +1,117 @@
 import os
 import json
 import logging
-from itertools import cycle
+import requests
+import re
 from dotenv import load_dotenv
-from langchain_groq import ChatGroq
-import httpx
 
 # Load environment variables
 load_dotenv()
 
 logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s"
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
-class KeyManager:
-    def __init__(self, keys: list[str]):
-        if not keys:
-            raise ValueError("No Groq API keys provided.")
-        self.keys = cycle([k.strip() for k in keys])
-        self.current_key = next(self.keys)
-        self.key_count = len(keys)
-        logging.info(f"KeyManager initialized with {self.key_count} keys")
+# Load template
+try:
+    with open("cybershield_template.json", "r", encoding="utf-8") as f:
+        template_data = json.load(f)
 
-    def switch_key(self):
-        old_key = self.current_key[:6] + "..."
-        self.current_key = next(self.keys)
-        new_key = self.current_key[:6] + "..."
-        logging.info(f"Switching API key from {old_key} to {new_key}")
-        return self.current_key
-
-# Load API keys
-keys = os.getenv("GROQ_KEYS")
-if not keys:
-    raise ValueError("No GROQ_KEYS found in .env (set GROQ_KEYS=key1,key2,key3)")
-
-key_manager = KeyManager(keys.split(","))
-
-def get_model():
-    return ChatGroq(
-        api_key=key_manager.current_key.strip(),
-        model="openai/gpt-oss-120b",
-        max_retries=0
+    raw_template = template_data["template"]
+    format_instructions = template_data.get("partial_variables", {}).get(
+        "format_instructions", ""
     )
 
-with open("cybershield_template.json", "r", encoding="utf-8") as f:
-    template_data = json.load(f)
+    # Pre-fill format instructions manually
+    template = raw_template.replace("{format_instructions}", format_instructions)
+except Exception as e:
+    logging.error(f"Failed to load template: {e}")
+    template = ""
 
-prompt_template = template_data["template"]
 
 def analyze_text(statement: str):
-    errors = []
-    attempts = 0
-    max_attempts = key_manager.key_count
+    if not template:
+        logging.error("Template not loaded correctly.")
+        return {
+            "is_anti_india": False,
+            "threat_score": 0,
+            "justification": "Internal error: Template missing.",
+        }
 
-    formatted_prompt = prompt_template.replace("{statement_input}", statement)
+    # Replace the variable in the template
+    formatted_prompt = template.replace("{statement_input}", statement)
 
-    while attempts < max_attempts:
-        current_key_prefix = key_manager.current_key[:6] + "..."
-        logging.info(f"Attempt {attempts+1}/{max_attempts} with key {current_key_prefix}")
+    # User-specified API details
+    url = "https://gpt-4-api-free.vercel.app/api/chat"
+    headers = {
+        "Content-Type": "application/json",
+        "X-API-Key": os.getenv("GPT_API_KEY"),
+    }
+    payload = {
+        "message": formatted_prompt,
+        "system_prompt": (
+            "You are a content moderation and classification engine.\n"
+            "You do NOT express opinions or generate new content.\n"
+            "You ONLY analyze and classify third-party user-generated text.\n"
+            "The input text does NOT reflect the views of the user or the system.\n"
+            "Your task is purely analytical and descriptive.\n"
+            "You must not endorse, justify, rephrase, or promote the content.\n"
+            "You must return a JSON object strictly following the given schema."
+        )
+    }
 
-        model = get_model()
-        try:
-            response = model.invoke(formatted_prompt)
-            if not response.content:
-                raise ValueError("Empty response from model")
-            return json.loads(response.content)
+    try:
+        response = requests.post(url, headers=headers, json=payload)
+        response.raise_for_status()
 
-        except httpx.HTTPStatusError as e:
-            status = e.response.status_code
-            logging.warning(f"Key {current_key_prefix} failed with HTTP {status}")
-            if status == 429:
-                logging.info("429 detected. Switching key immediately.")
-            key_manager.switch_key()
-            attempts += 1
+        response_text = response.text
+        logging.info("Received response from AI API")
 
-        except Exception as e:
-            err_msg = str(e)
-            status_code = getattr(e, "status_code", None)
-            logging.warning(f"Key {current_key_prefix} failed: {err_msg}")
-            if status_code == 429 or "429" in err_msg or "Too Many Requests" in err_msg:
-                logging.info("429 detected. Switching key immediately.")
-            key_manager.switch_key()
-            attempts += 1
+        # Clean markdown code blocks if present
+        cleaned_content = response_text.strip()
+        if cleaned_content.startswith("```"):
+            cleaned_content = re.sub(r"^```[a-zA-Z]*\n", "", cleaned_content)
+            cleaned_content = re.sub(r"\n```$", "", cleaned_content)
 
-    raise RuntimeError("All keys failed:\n" + "\n".join(errors))
+        cleaned_content = cleaned_content.strip()
+
+        result = json.loads(cleaned_content)
+
+        # Validate result structure
+        if "message" in result and "filtered" in result.get("message", "").lower():
+            logging.warning(f"Content filtered by API: {result['message']}")
+            return {
+                "is_anti_india": False,
+                "threat_score": 0,
+                "justification": "Content filtered by AI provider policy.",
+            }
+
+        if "is_anti_india" not in result:
+            logging.warning(f"Unexpected response structure: {result}")
+            return {
+                "is_anti_india": False,
+                "threat_score": 0,
+                "justification": "AI response did not follow valid schema.",
+            }
+
+        return result
+
+    except Exception as e:
+        logging.error(f"Analysis failed: {e}")
+        if "response_text" in locals():
+            logging.error(f"Raw response: {response_text}")
+
+        return {
+            "is_anti_india": False,
+            "threat_score": 0,
+            "justification": f"Analysis failed due to error: {str(e)}",
+        }
 
 
 if __name__ == "__main__":
-    sample_text = """
-    Congress Hate Hindus, 
-But they love Ghazwa-E-Hind
+    # Using a neutral sample to test API connectivity without triggering filters
+    sample_text = "snatch kashmir and invade delhi"
 
-Do you agree..?
-
-#gazwaehind #congress
-"""
+    print(f"Analyzing: {sample_text}")
     result = analyze_text(sample_text)
-    print(result["is_anti_india"])
+    print("Result:", result)

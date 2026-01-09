@@ -23,7 +23,7 @@ def get_posts(hashtag, next_id=None):
     # when making a similar request on instagram.com.
     headers = {
         'Host': 'www.instagram.com',
-        'Cookie': 'ig_did=91CB9BA0-9D5B-4B65-BFCF-D95ACCFFF6D6; csrftoken=F1X2AGikaWatFfSh85MWHn; datr=QE2paLXCjJTRDiTd4GNckQnw; wd=1481x752; dpr=1.25; mid=aKlNQAAEAAHzxk2_5yJVxVsng6hw; ps_l=1; ps_n=1; ig_nrcb=1; ds_user_id=70280221872; sessionid=70280221872%3AkHwiWSioM3sOab%3A4%3AAYdKl09e1YzFjFHRmyVJh64tsvYCzcoebmD1y8sBsQ; rur="CCO\\05470280221872\\0541787564974:01fe6db3d8d8aee318b0efaff3b92747afcf13bc0ac47ff2f1f01d876f35d0637f08a1fe"',
+        'Cookie': 'ig_did=91CB9BA0-9D5B-4B65-BFCF-D95ACCFFF6D6; csrftoken=F1X2AGikaWatFfSh85MWHn; datr=QE2paLXCjJTRDiTd4GNckQnw; wd=1481x752; dpr=1.25; mid=aKlNQAAEAAHzxk2_5yJVxVsng6hw; ps_l=1; ps_n=1; ig_nrcb=1; ds_user_id=70280221872; sessionid=70280221872%3ATnWMjuHxYwuP53%3A24%3AAYhZhDseSRwWghRFw32Z9gJqzUzJl31SARIa2VG_Wg; rur="CCO\\05470280221872\\0541787564974:01fe6db3d8d8aee318b0efaff3b92747afcf13bc0ac47ff2f1f01d876f35d0637f08a1fe"',
         'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0',
         'Accept': '*/*',
         'Accept-Language': 'en-US,en;q=0.5',
