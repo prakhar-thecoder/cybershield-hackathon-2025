@@ -31,11 +31,26 @@ def analyze_posts(hashtag):
         return
 
     # Process results
+    success_count = 0
+    error_count = 0
+
     for index, (post_dict, analysis) in enumerate(
         zip(posts_df.to_dict("records"), results)
     ):
         try:
             print(f"Processed post {index + 1}/{len(posts_df)}")
+
+            # Check for analysis errors based on justification text from ai_utils
+            justification = analysis.get("justification", "")
+            if (
+                justification.startswith("Analysis failed")
+                or justification == "AI response did not follow valid schema."
+                or justification == "Content filtered by AI provider policy."
+            ):
+                error_count += 1
+            else:
+                success_count += 1
+
             if analysis.get("is_anti_india"):
                 # Add the three analysis fields directly
                 post_dict["is_anti_india"] = analysis["is_anti_india"]
@@ -44,6 +59,11 @@ def analyze_posts(hashtag):
                 analyzed_data.append(post_dict)
         except Exception as e:
             print(f"Error processing result for post {index}: {e}")
+            error_count += 1
+
+    print(f"\nAnalysis Summary:")
+    print(f"Successfully analyzed: {success_count}")
+    print(f"Failed analysis: {error_count}")
 
     if analyzed_data:
         # Convert the list of dictionaries back to a DataFrame
