@@ -3,6 +3,7 @@ import json
 import logging
 import requests
 import re
+import concurrent.futures
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -57,7 +58,7 @@ def analyze_text(statement: str):
             "Your task is purely analytical and descriptive.\n"
             "You must not endorse, justify, rephrase, or promote the content.\n"
             "You must return a JSON object strictly following the given schema."
-        )
+        ),
     }
 
     try:
@@ -108,9 +109,20 @@ def analyze_text(statement: str):
         }
 
 
+def analyze_batch(statements: list[str], max_workers: int = 5):
+    """
+    Analyzes a list of statements in parallel.
+    Returns a list of results in the same order as the input statements.
+    """
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        # map preserves order
+        results = list(executor.map(analyze_text, statements))
+    return results
+
+
 if __name__ == "__main__":
     # Using a neutral sample to test API connectivity without triggering filters
-    sample_text = "snatch kashmir and invade delhi"
+    sample_text = "The economy of India is growing at a standardized pace."
 
     print(f"Analyzing: {sample_text}")
     result = analyze_text(sample_text)
