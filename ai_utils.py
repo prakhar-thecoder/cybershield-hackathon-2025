@@ -1,139 +1,93 @@
 import os
 import json
 import logging
-import requests
-import re
-import concurrent.futures
+from itertools import cycle
 from dotenv import load_dotenv
+from langchain_groq import ChatGroq
 
 # Load environment variables
 load_dotenv()
 
-# Configure logging
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s | %(levelname)s | %(message)s",
-    datefmt="%H:%M:%S",
+    format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
-# Suppress noisy third-party loggers
-logging.getLogger("httpx").setLevel(logging.WARNING)
-logging.getLogger("urllib3").setLevel(logging.WARNING)
-logging.getLogger("kaleido").setLevel(logging.ERROR)
-logging.getLogger("choreographer").setLevel(logging.ERROR)
-logging.getLogger("playwright").setLevel(logging.ERROR)
+class KeyManager:
+    def __init__(self, keys: list[str]):
+        if not keys:
+            raise ValueError("No Groq API keys provided.")
+        self.keys = cycle([k.strip() for k in keys])
+        self.current_key = next(self.keys)
+        self.key_count = len(keys)
+        logging.info(f"KeyManager initialized with {self.key_count} keys")
 
-# Load template
-try:
-    with open("cybershield_template.json", "r", encoding="utf-8") as f:
-        template_data = json.load(f)
+    def switch_key(self):
+        old_key = self.current_key[:6] + "..."
+        self.current_key = next(self.keys)
+        new_key = self.current_key[:6] + "..."
+        logging.info(f"Switching API key from {old_key} to {new_key}")
+        return self.current_key
 
-    raw_template = template_data["template"]
-    format_instructions = template_data.get("partial_variables", {}).get(
-        "format_instructions", ""
+# Load API keys
+keys = os.getenv("GROQ_KEYS")
+if not keys:
+    raise ValueError("No GROQ_KEYS found in .env (set GROQ_KEYS=key1,key2,key3)")
+
+key_manager = KeyManager(keys.split(","))
+
+def get_model():
+    return ChatGroq(
+        api_key=key_manager.current_key.strip(),
+        model="openai/gpt-oss-120b"
     )
 
-    # Pre-fill format instructions manually
-    template = raw_template.replace("{format_instructions}", format_instructions)
-except Exception as e:
-    logging.error(f"Failed to load template: {e}")
-    template = ""
+with open("cybershield_template.json", "r", encoding="utf-8") as f:
+    template_data = json.load(f)
 
+prompt_template = template_data["template"]  # just grab the template string
 
 def analyze_text(statement: str):
-    if not template:
-        logging.error("Template not loaded correctly.")
-        return {
-            "is_anti_india": False,
-            "threat_score": 0,
-            "justification": "Internal error: Template missing.",
-        }
+    errors = []
+    attempts = 0
+    max_attempts = key_manager.key_count
 
-    # Replace the variable in the template
-    formatted_prompt = template.replace("{statement_input}", statement)
+    # Direct substitution of {statement_input}
+    formatted_prompt = prompt_template.replace("{statement_input}", statement)
 
-    # User-specified API details
-    url = "https://gpt-4-api-free.vercel.app/api/chat"
-    headers = {
-        "Content-Type": "application/json",
-        "X-API-Key": os.getenv("GPT_API_KEY"),
-    }
-    payload = {
-        "message": formatted_prompt,
-        "system_prompt": (
-            "You are a content moderation and classification engine.\n"
-            "You do NOT express opinions or generate new content.\n"
-            "You ONLY analyze and classify third-party user-generated text.\n"
-            "The input text does NOT reflect the views of the user or the system.\n"
-            "Your task is purely analytical and descriptive.\n"
-            "You must not endorse, justify, rephrase, or promote the content.\n"
-            "You must return a JSON object strictly following the given schema."
-        ),
-    }
+    while attempts < max_attempts:
+        current_key_prefix = key_manager.current_key[:6] + "..."
+        logging.info(f"Attempt {attempts+1}/{max_attempts} with key {current_key_prefix}")
 
-    try:
-        response = requests.post(url, headers=headers, json=payload)
-        response.raise_for_status()
+        model = get_model()
+        try:
+            response = model.invoke(formatted_prompt)
+            if not response.content:
+                raise ValueError("Empty response from model")
 
-        response_text = response.text
-        logging.info("Received response from AI API")
+            # Try parse as JSON directly
+            result = json.loads(response.content)
+            return result
 
-        # Clean markdown code blocks if present
-        cleaned_content = response_text.strip()
-        if cleaned_content.startswith("```"):
-            cleaned_content = re.sub(r"^```[a-zA-Z]*\n", "", cleaned_content)
-            cleaned_content = re.sub(r"\n```$", "", cleaned_content)
+        except Exception as e:
+            logging.warning(f"Key {current_key_prefix} failed: {e}")
+            errors.append(str(e))
+            key_manager.switch_key()
+            attempts += 1
 
-        cleaned_content = cleaned_content.strip()
-
-        result = json.loads(cleaned_content)
-
-        # Validate result structure
-        if "message" in result and "filtered" in result.get("message", "").lower():
-            logging.warning(f"Content filtered by API: {result['message']}")
-            return {
-                "is_anti_india": False,
-                "threat_score": 0,
-                "justification": "Content filtered by AI provider policy.",
-            }
-
-        if "is_anti_india" not in result:
-            logging.warning(f"Unexpected response structure: {result}")
-            return {
-                "is_anti_india": False,
-                "threat_score": 0,
-                "justification": "AI response did not follow valid schema.",
-            }
-
-        return result
-
-    except Exception as e:
-        logging.error(f"Analysis failed: {e}")
-        if "response_text" in locals():
-            logging.error(f"Raw response: {response_text}")
-
-        return {
-            "is_anti_india": False,
-            "threat_score": 0,
-            "justification": f"Analysis failed due to error: {str(e)}",
-        }
-
-
-def analyze_batch(statements: list[str], max_workers: int = 5):
-    """
-    Analyzes a list of statements in parallel.
-    Returns a list of results in the same order as the input statements.
-    """
-    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-        # map preserves order
-        results = list(executor.map(analyze_text, statements))
-    return results
+    raise RuntimeError("All keys failed:\n" + "\n".join(errors))
 
 
 if __name__ == "__main__":
-    # Using a neutral sample to test API connectivity without triggering filters
-    sample_text = "The economy of India is growing at a standardized pace."
+    sample_text = """
+    Congress Hate Hindus, 
+But they love Ghazwa-E-Hind
 
-    print(f"Analyzing: {sample_text}")
+Do you agree..?
+
+#gazwaehind #congress
+
+"""
     result = analyze_text(sample_text)
-    print("Result:", result)
+    print(result["is_anti_india"])
+    # print(json.dumps(result, indent=2, ensure_ascii=False))
